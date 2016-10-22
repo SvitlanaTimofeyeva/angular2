@@ -6,8 +6,10 @@ import { Component } from '@angular/core'
     selector: 'my-app', 
 
     template: 
-    `<input [(ngModel)]="username" type="text" placeholder="Enter Name"/> 
-     <p> Hello {{username}}!</p>`
+    `<div class="panel well">
+     <input class="input-lg" [(ngModel)]="username" type="text" placeholder="Enter Name"/> 
+     <h2> Hello {{username}}!</h2>
+     </div>`
 	
 }) 
 

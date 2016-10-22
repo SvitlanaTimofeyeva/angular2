@@ -1,61 +1,67 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/*!**********************************************!*\
+  !*** ./002_one_way_data_binding/src/main.ts ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>"
 	"use strict";
 	// Браузерная платформа
-	var platform_browser_dynamic_1 = __webpack_require__(1);
+	var platform_browser_dynamic_1 = __webpack_require__(/*! ../../~/@angular/platform-browser-dynamic */ 1);
 	// Модуль приложения
-	var app_module_1 = __webpack_require__(25);
+	var app_module_1 = __webpack_require__(/*! ./app.module */ 25);
 	// Компилляция и запуск модуля 
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ },
 /* 1 */
+/*!*************************************************************************************!*\
+  !*** ./~/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js ***!
+  \*************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -64,13 +70,13 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(2), __webpack_require__(3), __webpack_require__(21)) :
+	     true ? factory(exports, __webpack_require__(/*! @angular/compiler */ 2), __webpack_require__(/*! @angular/core */ 3), __webpack_require__(/*! @angular/platform-browser */ 21)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/compiler', '@angular/core', '@angular/platform-browser'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.platformBrowserDynamic = global.ng.platformBrowserDynamic || {}),global.ng.compiler,global.ng.core,global.ng.platformBrowser));
 	}(this, function (exports,_angular_compiler,_angular_core,_angular_platformBrowser) { 'use strict';
-
+	
 	    var INTERNAL_BROWSER_PLATFORM_PROVIDERS = _angular_platformBrowser.__platform_browser_private__.INTERNAL_BROWSER_PLATFORM_PROVIDERS;
-
+	
 	    var __extends = (this && this.__extends) || function (d, b) {
 	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
 	        function __() { this.constructor = d; }
@@ -122,7 +128,7 @@
 	        ResourceLoaderImpl.ctorParameters = [];
 	        return ResourceLoaderImpl;
 	    }(_angular_compiler.ResourceLoader));
-
+	
 	    var INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS = [
 	        INTERNAL_BROWSER_PLATFORM_PROVIDERS,
 	        {
@@ -131,7 +137,7 @@
 	            multi: true
 	        },
 	    ];
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -161,7 +167,7 @@
 	    _global.assert = function assert(condition) {
 	        // TODO: to be fixed properly via #2830, noop for now
 	    };
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -200,12 +206,12 @@
 	        };
 	        return CachedResourceLoader;
 	    }(_angular_compiler.ResourceLoader));
-
+	
 	    var __platform_browser_dynamic_private__ = {
 	        INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS: INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
 	        ResourceLoaderImpl: ResourceLoaderImpl
 	    };
-
+	
 	    /**
 	     * @experimental
 	     */
@@ -214,17 +220,20 @@
 	     * @stable
 	     */
 	    var platformBrowserDynamic = _angular_core.createPlatformFactory(_angular_compiler.platformCoreDynamic, 'browserDynamic', INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS);
-
+	
 	    exports.RESOURCE_CACHE_PROVIDER = RESOURCE_CACHE_PROVIDER;
 	    exports.platformBrowserDynamic = platformBrowserDynamic;
 	    exports.__platform_browser_dynamic_private__ = __platform_browser_dynamic_private__;
-
+	
 	}));
-
+	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 2 */
+/*!*****************************************************!*\
+  !*** ./~/@angular/compiler/bundles/compiler.umd.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -233,11 +242,11 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	   true ? factory(exports, __webpack_require__(3)) :
+	   true ? factory(exports, __webpack_require__(/*! @angular/core */ 3)) :
 	  typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
 	  (factory((global.ng = global.ng || {}, global.ng.compiler = global.ng.compiler || {}),global.ng.core));
 	}(this, function (exports,_angular_core) { 'use strict';
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -527,7 +536,7 @@
 	      });
 	      return result;
 	  }
-
+	
 	  function isPresent(obj) {
 	      return obj !== undefined && obj !== null;
 	  }
@@ -602,7 +611,7 @@
 	  function escapeRegExp(s) {
 	      return s.replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
 	  }
-
+	
 	  // Safari doesn't implement MapIterator.next(), which is used is Traceur's polyfill of Array.from
 	  // TODO(mlaval): remove the work around once we have a working polyfill of Array.from
 	  var _arrayFromMap = (function () {
@@ -802,7 +811,7 @@
 	      }
 	      return target;
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -1090,7 +1099,7 @@
 	      'zwj': '\u200D',
 	      'zwnj': '\u200C',
 	  };
-
+	
 	  var HtmlTagDefinition = (function () {
 	      function HtmlTagDefinition(_a) {
 	          var _this = this;
@@ -1185,7 +1194,7 @@
 	  function getHtmlTagDefinition(tagName) {
 	      return TAG_DEFINITIONS[tagName.toLowerCase()] || _DEFAULT_TAG_DEFINITION;
 	  }
-
+	
 	  var _SELECTOR_REGEXP = new RegExp('(\\:not\\()|' +
 	      '([-\\w]+)|' +
 	      '(?:\\.([-\\w]+))|' +
@@ -1516,7 +1525,7 @@
 	      };
 	      return SelectorContext;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -2450,7 +2459,7 @@
 	      if (type === void 0) { type = null; }
 	      return new LiteralExpr(value, type);
 	  }
-
+	
 	  var MODULE_SUFFIX = '';
 	  function splitAtColon(input, defaultValues) {
 	      return _splitAt(input, ':', defaultValues);
@@ -2529,7 +2538,7 @@
 	      }
 	      return SyncAsyncResult;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -2993,7 +3002,7 @@
 	      }
 	      return ProviderMeta;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -3413,7 +3422,7 @@
 	      RecursiveAstVisitor.prototype.visitQuote = function (ast, context) { return null; };
 	      return RecursiveAstVisitor;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -3488,7 +3497,7 @@
 	  function isAsciiHexDigit(code) {
 	      return code >= $a && code <= $f || code >= $A && code <= $F || isDigit(code);
 	  }
-
+	
 	  function assertArrayOfStrings(identifier, value) {
 	      if (!_angular_core.isDevMode() || isBlank(value)) {
 	          return;
@@ -3524,7 +3533,7 @@
 	          });
 	      }
 	  }
-
+	
 	  var InterpolationConfig = (function () {
 	      function InterpolationConfig(start, end) {
 	          this.start = start;
@@ -3541,7 +3550,7 @@
 	      return InterpolationConfig;
 	  }());
 	  var DEFAULT_INTERPOLATION_CONFIG = new InterpolationConfig('{{', '}}');
-
+	
 	  exports.TokenType;
 	  (function (TokenType) {
 	      TokenType[TokenType["Character"] = 0] = "Character";
@@ -3882,7 +3891,7 @@
 	              return code;
 	      }
 	  }
-
+	
 	  var SplitInterpolation = (function () {
 	      function SplitInterpolation(strings, expressions, offsets) {
 	          this.strings = strings;
@@ -4610,7 +4619,7 @@
 	      SimpleExpressionChecker.prototype.visitQuote = function (ast, context) { this.simple = false; };
 	      return SimpleExpressionChecker;
 	  }());
-
+	
 	  var ParseLocation = (function () {
 	      function ParseLocation(file, offset, line, col) {
 	          this.file = file;
@@ -4697,7 +4706,7 @@
 	      };
 	      return ParseError;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -4779,7 +4788,7 @@
 	      });
 	      return result;
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -5435,7 +5444,7 @@
 	      }
 	      return dstTokens;
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -5797,7 +5806,7 @@
 	  function lastOnStack(stack, element) {
 	      return stack.length > 0 && stack[stack.length - 1] === element;
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -5957,7 +5966,7 @@
 	  function rol32(a, count) {
 	      return (a << count) | (a >>> (32 - count));
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -6042,7 +6051,7 @@
 	      IcuPlaceholder.prototype.visit = function (visitor, context) { return visitor.visitIcuPlaceholder(this, context); };
 	      return IcuPlaceholder;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -6149,7 +6158,7 @@
 	      };
 	      return PlaceholderRegistry;
 	  }());
-
+	
 	  var _expParser = new Parser(new Lexer());
 	  /**
 	   * Returns a function converting html nodes to an i18n Message given an interpolationConfig
@@ -6258,7 +6267,7 @@
 	  function _extractPlaceholderName(input) {
 	      return input.split(_CUSTOM_PH_EXP)[1];
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -6281,7 +6290,7 @@
 	      }
 	      return I18nError;
 	  }(ParseError));
-
+	
 	  var _I18N_ATTR = 'i18n';
 	  var _I18N_ATTR_PREFIX = 'i18n-';
 	  var _I18N_COMMENT_PREFIX_REGEXP = /^i18n:?/;
@@ -6681,7 +6690,7 @@
 	      var pipeIndex = i18n.indexOf('|');
 	      return pipeIndex == -1 ? ['', i18n] : [i18n.slice(0, pipeIndex), i18n.slice(pipeIndex + 1)];
 	  }
-
+	
 	  /**
 	   * A container for message extracted from the templates.
 	   */
@@ -6708,7 +6717,7 @@
 	      MessageBundle.prototype.write = function (serializer) { return serializer.write(this._messageMap); };
 	      return MessageBundle;
 	  }());
-
+	
 	  var XmlTagDefinition = (function () {
 	      function XmlTagDefinition() {
 	          this.closedByParent = false;
@@ -6725,7 +6734,7 @@
 	  function getXmlTagDefinition(tagName) {
 	      return _TAG_DEFINITION;
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -6749,7 +6758,7 @@
 	      };
 	      return XmlParser;
 	  }(Parser$1));
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -6775,7 +6784,7 @@
 	      });
 	      return placeholderToIds;
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -6878,7 +6887,7 @@
 	  function _escapeXml(text) {
 	      return _ESCAPED_CHARS.reduce(function (text, entry) { return text.replace(entry[0], entry[1]); }, text);
 	  }
-
+	
 	  var _VERSION = '1.2';
 	  var _XMLNS = 'urn:oasis:names:tc:xliff:document:1.2';
 	  // TODO(vicb): make this a param (s/_/-/)
@@ -7106,7 +7115,7 @@
 	              return "x-" + tag;
 	      }
 	  }
-
+	
 	  var _MESSAGES_TAG = 'messagebundle';
 	  var _MESSAGE_TAG = 'msg';
 	  var _PLACEHOLDER_TAG$1 = 'ph';
@@ -7186,7 +7195,7 @@
 	      };
 	      return _Visitor;
 	  }());
-
+	
 	  var _TRANSLATIONS_TAG = 'translationbundle';
 	  var _TRANSLATION_TAG = 'translation';
 	  var _PLACEHOLDER_TAG$2 = 'ph';
@@ -7335,7 +7344,7 @@
 	      };
 	      return _Visitor;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -7358,7 +7367,7 @@
 	      TranslationBundle.prototype.has = function (id) { return id in this._messageMap; };
 	      return TranslationBundle;
 	  }());
-
+	
 	  var I18NHtmlParser = (function () {
 	      // TODO(vicb): transB.load() should not need a msgB & add transB.resolve(msgB,
 	      // interpolationConfig)
@@ -7401,7 +7410,7 @@
 	      };
 	      return I18NHtmlParser;
 	  }());
-
+	
 	  var isDefaultChangeDetectionStrategy = _angular_core.__core_private__.isDefaultChangeDetectionStrategy;
 	  var ChangeDetectorStatus = _angular_core.__core_private__.ChangeDetectorStatus;
 	  var LifecycleHooks = _angular_core.__core_private__.LifecycleHooks;
@@ -7441,7 +7450,7 @@
 	  var renderStyles = _angular_core.__core_private__.renderStyles;
 	  var ComponentStillLoadingError = _angular_core.__core_private__.ComponentStillLoadingError;
 	  var AnimationTransition = _angular_core.__core_private__.AnimationTransition;
-
+	
 	  var APP_VIEW_MODULE_URL = assetUrl('core', 'linker/view');
 	  var VIEW_UTILS_MODULE_URL = assetUrl('core', 'linker/view_utils');
 	  var CD_MODULE_URL = assetUrl('core', 'change_detection/change_detection');
@@ -7721,7 +7730,7 @@
 	      var resolvedEnum = reflector.resolveEnum(enumType.reference, name);
 	      return new CompileIdentifierMetadata({ name: enumType.name + "." + name, moduleUrl: enumType.moduleUrl, reference: resolvedEnum });
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -7751,7 +7760,7 @@
 	      HtmlParser.ctorParameters = [];
 	      return HtmlParser;
 	  }(Parser$1));
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -7855,7 +7864,7 @@
 	      var switchAttr = new Attribute$1('[ngSwitch]', ast.switchValue, ast.switchValueSourceSpan);
 	      return new Element('ng-container', [switchAttr], children, ast.sourceSpan, ast.sourceSpan, ast.sourceSpan);
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -8336,7 +8345,7 @@
 	          entry.push(query);
 	      });
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -8349,7 +8358,7 @@
 	      }
 	      return ElementSchemaRegistry;
 	  }());
-
+	
 	  var StyleWithImports = (function () {
 	      function StyleWithImports(style, styleUrls) {
 	          this.style = style;
@@ -8386,7 +8395,7 @@
 	  }
 	  var _cssImportRe = /@import\s+(?:url\()?\s*(?:(?:['"]([^'"]*))|([^;\)\s]*))[^;]*;?/g;
 	  var _urlWithSchemaRe = /^([^:/?#]+):/;
-
+	
 	  var NG_CONTENT_SELECT_ATTR = 'select';
 	  var NG_CONTENT_ELEMENT = 'ng-content';
 	  var LINK_ELEMENT = 'link';
@@ -8464,7 +8473,7 @@
 	      }
 	      return selectAttr;
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -9433,7 +9442,7 @@
 	  function _isEmptyTextNode(node) {
 	      return node instanceof Text && node.value.trim().length == 0;
 	  }
-
+	
 	  function unimplemented$1() {
 	      throw new Error('unimplemented');
 	  }
@@ -9518,7 +9527,7 @@
 	      ;
 	      return DefaultRenderTypes;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -9655,7 +9664,7 @@
 	      };
 	      return AnimationSequenceAst;
 	  }(AnimationWithStepsAst));
-
+	
 	  var AnimationEntryCompileResult = (function () {
 	      function AnimationEntryCompileResult(name, statements, fnExp) {
 	          this.name = name;
@@ -9934,7 +9943,7 @@
 	  function _getStylesArray(obj) {
 	      return obj.styles.styles;
 	  }
-
+	
 	  var StylesCollectionEntry = (function () {
 	      function StylesCollectionEntry(time, value) {
 	          this.time = time;
@@ -9985,7 +9994,7 @@
 	      };
 	      return StylesCollection;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -10483,7 +10492,7 @@
 	      });
 	      return new AnimationKeyframeAst(_INITIAL_KEYFRAME, new AnimationStylesAst([values]));
 	  }
-
+	
 	  var DirectiveWrapperCompileResult = (function () {
 	      function DirectiveWrapperCompileResult(statements, dirWrapperClassVar) {
 	          this.statements = statements;
@@ -10625,7 +10634,7 @@
 	          new FnParam(FORCE_UPDATE_VAR.name, BOOL_TYPE),
 	      ], methodBody);
 	  }
-
+	
 	  function convertValueToOutputAst(value, type) {
 	      if (type === void 0) { type = null; }
 	      return visitValue(value, new _ValueOutputAstTransformer(), type);
@@ -10657,7 +10666,7 @@
 	      };
 	      return _ValueOutputAstTransformer;
 	  }());
-
+	
 	  var _DebugState = (function () {
 	      function _DebugState(nodeIndex, sourceAst) {
 	          this.nodeIndex = nodeIndex;
@@ -10716,7 +10725,7 @@
 	      CompileMethod.prototype.isEmpty = function () { return this._bodyStatements.length === 0; };
 	      return CompileMethod;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -10814,7 +10823,7 @@
 	          .set(importExpr(resolveIdentifier(pureProxyId)).callFn([fn]))
 	          .toStmt());
 	  }
-
+	
 	  var ViewQueryValues = (function () {
 	      function ViewQueryValues(view, values) {
 	          this.view = view;
@@ -10918,7 +10927,7 @@
 	          entry.push(query);
 	      });
 	  }
-
+	
 	  function _enumExpression(classIdentifier, name) {
 	      return importExpr(resolveEnumIdentifier(classIdentifier, name));
 	  }
@@ -11021,7 +11030,7 @@
 	      DetectChangesVars.valUnwrapper = variable("valUnwrapper");
 	      return DetectChangesVars;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -11050,7 +11059,7 @@
 	      }
 	      return DirectiveWrapperDependency;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -11442,7 +11451,7 @@
 	      }
 	      return _QueryWithRead;
 	  }());
-
+	
 	  var CompilePipe = (function () {
 	      function CompilePipe(view, meta) {
 	          var _this = this;
@@ -11519,7 +11528,7 @@
 	      }
 	      return pipeMeta;
 	  }
-
+	
 	  var CompileView = (function () {
 	      function CompileView(component, genConfig, pipeMetas, styles, animations, viewIndex, declarationElement, templateVariableBindings) {
 	          var _this = this;
@@ -11667,7 +11676,7 @@
 	          return ViewType.COMPONENT;
 	      }
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -11682,7 +11691,7 @@
 	      }
 	      return CompileBinding;
 	  }());
-
+	
 	  var ExpressionWithWrappedValueInfo = (function () {
 	      function ExpressionWithWrappedValueInfo(expression, needsValueUnwrapper, temporaryCount) {
 	          this.expression = expression;
@@ -12087,7 +12096,7 @@
 	          output.push(arg);
 	      }
 	  }
-
+	
 	  var CompileEventListener = (function () {
 	      function CompileEventListener(compileElement, eventTarget, eventName, eventPhase, listenerIndex) {
 	          this.compileElement = compileElement;
@@ -12233,7 +12242,7 @@
 	  function sanitizeEventName(name) {
 	      return name.replace(/[^a-zA-Z_]/g, '_');
 	  }
-
+	
 	  var STATE_IS_NEVER_CHECKED = THIS_EXPR.prop('numberOfChecks').identical(new LiteralExpr(0));
 	  var NOT_THROW_ON_CHANGES = not(DetectChangesVars.throwOnChange);
 	  function bindDirectiveAfterContentLifecycleCallbacks(directiveMeta, directiveInstance, compileElement) {
@@ -12273,7 +12282,7 @@
 	          onDestroyMethod.addStmt(pipeInstance.callMethod('ngOnDestroy', []).toStmt());
 	      }
 	  }
-
+	
 	  function createBindFieldExpr(exprIndex) {
 	      return THIS_EXPR.prop("_expr_" + exprIndex);
 	  }
@@ -12483,7 +12492,7 @@
 	          .callFn([THIS_EXPR.prop('renderer'), renderNode, literal(propName), value])
 	          .toStmt();
 	  }
-
+	
 	  function bindView(view, parsedTemplate) {
 	      var visitor = new ViewBinderVisitor(view);
 	      templateVisitAll(visitor, parsedTemplate);
@@ -12562,7 +12571,7 @@
 	      ViewBinderVisitor.prototype.visitElementProperty = function (ast, context) { return null; };
 	      return ViewBinderVisitor;
 	  }());
-
+	
 	  var IMPLICIT_TEMPLATE_VAR = '\$implicit';
 	  var CLASS_ATTR$1 = 'class';
 	  var STYLE_ATTR = 'style';
@@ -13039,7 +13048,7 @@
 	      }
 	      return mode;
 	  }
-
+	
 	  var ViewCompileResult = (function () {
 	      function ViewCompileResult(statements, viewFactoryVar, dependencies) {
 	          this.statements = statements;
@@ -13072,7 +13081,7 @@
 	      ];
 	      return ViewCompiler;
 	  }());
-
+	
 	  var SourceModule = (function () {
 	      function SourceModule(moduleUrl, source) {
 	          this.moduleUrl = moduleUrl;
@@ -13277,7 +13286,7 @@
 	      }
 	      return [path, ''];
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -13295,7 +13304,7 @@
 	      ResourceLoader.prototype.get = function (url) { return null; };
 	      return ResourceLoader;
 	  }());
-
+	
 	  var _ASSET_SCHEME = 'asset:';
 	  /**
 	   * Create a {@link UrlResolver} with no package prefix.
@@ -13618,7 +13627,7 @@
 	      parts[_ComponentIndex.Path] = path;
 	      return _joinAndCanonicalizePath(parts);
 	  }
-
+	
 	  var DirectiveNormalizer = (function () {
 	      function DirectiveNormalizer(_resourceLoader, _urlResolver, _htmlParser, _config) {
 	          this._resourceLoader = _resourceLoader;
@@ -13834,7 +13843,7 @@
 	          entryComponents: directive.entryComponents, template: template,
 	      });
 	  }
-
+	
 	  /*
 	   * Resolve a `Type` for {@link Directive}.
 	   *
@@ -13990,7 +13999,7 @@
 	  function isDirectiveMetadata(type) {
 	      return type instanceof _angular_core.Directive;
 	  }
-
+	
 	  function hasLifecycleHook(hook, token) {
 	      return reflector.hasLifecycleHook(token, getHookName(hook));
 	  }
@@ -14014,7 +14023,7 @@
 	              return 'ngAfterViewChecked';
 	      }
 	  }
-
+	
 	  function _isNgModuleMetadata(obj) {
 	      return obj instanceof _angular_core.NgModule;
 	  }
@@ -14048,7 +14057,7 @@
 	      ];
 	      return NgModuleResolver;
 	  }());
-
+	
 	  function _isPipeMetadata(type) {
 	      return type instanceof _angular_core.Pipe;
 	  }
@@ -14090,7 +14099,7 @@
 	      ];
 	      return PipeResolver;
 	  }());
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -14803,7 +14812,7 @@
 	      };
 	      return _CompileValueConverter;
 	  }(ValueTransformer));
-
+	
 	  var ComponentFactoryDependency$1 = (function () {
 	      function ComponentFactoryDependency(comp, placeholder) {
 	          this.comp = comp;
@@ -15003,7 +15012,7 @@
 	      InjectMethodVars.notFoundResult = variable('notFoundResult');
 	      return InjectMethodVars;
 	  }());
-
+	
 	  var _SINGLE_QUOTE_ESCAPE_STRING_RE = /'|\\|\n|\r|\$/g;
 	  var _LEGAL_IDENTIFIER_RE = /^[$A-Z_][0-9A-Z_$]*$/i;
 	  var CATCH_ERROR_VAR$2 = variable('error');
@@ -15408,7 +15417,7 @@
 	      }
 	      return res;
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -15732,7 +15741,7 @@
 	      };
 	      return _TsEmitterVisitor;
 	  }(AbstractEmitterVisitor));
-
+	
 	  function interpretStatements(statements, resultVar) {
 	      var stmtsWithReturn = statements.concat([new ReturnStatement(variable(resultVar))]);
 	      var ctx = new _ExecutionContext(null, null, null, new Map());
@@ -16062,7 +16071,7 @@
 	  }
 	  var CATCH_ERROR_VAR$1 = 'error';
 	  var CATCH_STACK_VAR$1 = 'stack';
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -16227,7 +16236,7 @@
 	      };
 	      return AbstractJsEmitterVisitor;
 	  }(AbstractEmitterVisitor));
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -16284,7 +16293,7 @@
 	      };
 	      return JitEmitterVisitor;
 	  }(AbstractJsEmitterVisitor));
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -16305,103 +16314,103 @@
 	  /*
 	    This is a limited shim for ShadowDOM css styling.
 	    https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/shadow/index.html#styles
-
+	
 	    The intention here is to support only the styling features which can be
 	    relatively simply implemented. The goal is to allow users to avoid the
 	    most obvious pitfalls and do so without compromising performance significantly.
 	    For ShadowDOM styling that's not covered here, a set of best practices
 	    can be provided that should allow users to accomplish more complex styling.
-
+	
 	    The following is a list of specific ShadowDOM styling features and a brief
 	    discussion of the approach used to shim.
-
+	
 	    Shimmed features:
-
+	
 	    * :host, :host-context: ShadowDOM allows styling of the shadowRoot's host
 	    element using the :host rule. To shim this feature, the :host styles are
 	    reformatted and prefixed with a given scope name and promoted to a
 	    document level stylesheet.
 	    For example, given a scope name of .foo, a rule like this:
-
+	
 	      :host {
 	          background: red;
 	        }
 	      }
-
+	
 	    becomes:
-
+	
 	      .foo {
 	        background: red;
 	      }
-
+	
 	    * encapsulation: Styles defined within ShadowDOM, apply only to
 	    dom inside the ShadowDOM. Polymer uses one of two techniques to implement
 	    this feature.
-
+	
 	    By default, rules are prefixed with the host element tag name
 	    as a descendant selector. This ensures styling does not leak out of the 'top'
 	    of the element's ShadowDOM. For example,
-
+	
 	    div {
 	        font-weight: bold;
 	      }
-
+	
 	    becomes:
-
+	
 	    x-foo div {
 	        font-weight: bold;
 	      }
-
+	
 	    becomes:
-
-
+	
+	
 	    Alternatively, if WebComponents.ShadowCSS.strictStyling is set to true then
 	    selectors are scoped by adding an attribute selector suffix to each
 	    simple selector that contains the host element tag name. Each element
 	    in the element's ShadowDOM template is also given the scope attribute.
 	    Thus, these rules match only elements that have the scope attribute.
 	    For example, given a scope name of x-foo, a rule like this:
-
+	
 	      div {
 	        font-weight: bold;
 	      }
-
+	
 	    becomes:
-
+	
 	      div[x-foo] {
 	        font-weight: bold;
 	      }
-
+	
 	    Note that elements that are dynamically added to a scope must have the scope
 	    selector added to them manually.
-
+	
 	    * upper/lower bound encapsulation: Styles which are defined outside a
 	    shadowRoot should not cross the ShadowDOM boundary and should not apply
 	    inside a shadowRoot.
-
+	
 	    This styling behavior is not emulated. Some possible ways to do this that
 	    were rejected due to complexity and/or performance concerns include: (1) reset
 	    every possible property for every possible selector for a given scope name;
 	    (2) re-implement css in javascript.
-
+	
 	    As an alternative, users should make sure to use selectors
 	    specific to the scope in which they are working.
-
+	
 	    * ::distributed: This behavior is not emulated. It's often not necessary
 	    to style the contents of a specific insertion point and instead, descendants
 	    of the host element can be styled selectively. Users can also create an
 	    extra node around an insertion point and style that node's contents
 	    via descendent selectors. For example, with a shadowRoot like this:
-
+	
 	      <style>
 	        ::content(div) {
 	          background: red;
 	        }
 	      </style>
 	      <content></content>
-
+	
 	    could become:
-
+	
 	      <style>
 	        / *@polyfill .content-container div * /
 	        ::content(div) {
@@ -16411,7 +16420,7 @@
 	      <div class="content-container">
 	        <content></content>
 	      </div>
-
+	
 	    Note the use of @polyfill in the comment above a ShadowDOM specific style
 	    declaration. This is a directive to the styling shim to use the selector
 	    in comments in lieu of the next selector when running under polyfill.
@@ -16842,7 +16851,7 @@
 	      }
 	      return new StringWithEscapedBlocks(resultParts.join(''), escapedBlocks);
 	  }
-
+	
 	  var COMPONENT_VARIABLE = '%COMP%';
 	  var HOST_ATTR = "_nghost-" + COMPONENT_VARIABLE;
 	  var CONTENT_ATTR = "_ngcontent-" + COMPONENT_VARIABLE;
@@ -16927,7 +16936,7 @@
 	      }
 	      return result;
 	  }
-
+	
 	  /**
 	   * An internal module of the Angular compiler that begins with component types,
 	   * extracts templates, and eventually produces a compiled version of the component
@@ -17336,7 +17345,7 @@
 	      ModuleBoundCompiler.prototype.clearCacheFor = function (type) { this._delegate.clearCacheFor(type); };
 	      return ModuleBoundCompiler;
 	  }());
-
+	
 	  // =================================================================================================
 	  // =================================================================================================
 	  // =========== S T O P   -  S T O P   -  S T O P   -  S T O P   -  S T O P   -  S T O P  ===========
@@ -17384,7 +17393,7 @@
 	      'object|data',
 	      'script|src',
 	  ]);
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -17741,7 +17750,7 @@
 	      DomElementSchemaRegistry.ctorParameters = [];
 	      return DomElementSchemaRegistry;
 	  }(ElementSchemaRegistry));
-
+	
 	  var _NO_RESOURCE_LOADER = {
 	      get: function (url) {
 	          throw new Error("No ResourceLoader implementation has been provided. Can't read the url \"" + url + "\"");
@@ -17865,7 +17874,7 @@
 	      parts.forEach(function (part) { return part && result.push.apply(result, part); });
 	      return result;
 	  }
-
+	
 	  /**
 	   * @license
 	   * Copyright Google Inc. All Rights Reserved.
@@ -17903,7 +17912,7 @@
 	      };
 	      return AssetUrl;
 	  }());
-
+	
 	  exports.TEMPLATE_TRANSFORMS = TEMPLATE_TRANSFORMS;
 	  exports.CompilerConfig = CompilerConfig;
 	  exports.RenderTypes = RenderTypes;
@@ -18014,12 +18023,15 @@
 	  exports.TemplateParser = TemplateParser;
 	  exports.splitClasses = splitClasses;
 	  exports.PipeCollector = PipeCollector;
-
+	
 	}));
 
 
 /***/ },
 /* 3 */
+/*!*********************************************!*\
+  !*** ./~/@angular/core/bundles/core.umd.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -18028,11 +18040,11 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(4), __webpack_require__(5)) :
+	     true ? factory(exports, __webpack_require__(/*! rxjs/Subject */ 4), __webpack_require__(/*! rxjs/Observable */ 5)) :
 	    typeof define === 'function' && define.amd ? define(['exports', 'rxjs/Subject', 'rxjs/Observable'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.core = global.ng.core || {}),global.Rx,global.Rx));
 	}(this, function (exports,rxjs_Subject,rxjs_Observable) { 'use strict';
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -18127,7 +18139,7 @@
 	    function isPrimitive(obj) {
 	        return !isJsObject(obj);
 	    }
-
+	
 	    var _nextClassId = 0;
 	    var Reflect = global$1.Reflect;
 	    function extractAnnotation(annotation) {
@@ -18402,7 +18414,7 @@
 	        PropDecoratorFactory.annotationCls = PropDecoratorFactory;
 	        return PropDecoratorFactory;
 	    }
-
+	
 	    /**
 	     * Inject decorator and metadata.
 	     *
@@ -18445,7 +18457,7 @@
 	     * @Annotation
 	     */
 	    var Host = makeParamDecorator('Host', []);
-
+	
 	    /**
 	     * Creates a token that can be used in a DI Provider.
 	     *
@@ -18483,7 +18495,7 @@
 	        ];
 	        return OpaqueToken;
 	    }());
-
+	
 	    /**
 	     * This token can be used to create a virtual provider that will populate the
 	     * `entryComponents` fields of components and ng modules based on its `useValue`.
@@ -18641,7 +18653,7 @@
 	            read: undefined,
 	        }
 	    ], Query);
-
+	
 	    /**
 	     * Describes within the change detector which strategy will be used the next time change
 	     * detection is triggered.
@@ -18698,7 +18710,7 @@
 	        return isBlank(changeDetectionStrategy) ||
 	            changeDetectionStrategy === exports.ChangeDetectionStrategy.Default;
 	    }
-
+	
 	    /**
 	     * Directive decorator and metadata.
 	     *
@@ -18778,7 +18790,7 @@
 	     * @Annotation
 	     */
 	    var HostListener = makePropDecorator('HostListener', [['eventName', undefined], ['args', []]]);
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -18951,7 +18963,7 @@
 	        }
 	        return AfterViewChecked;
 	    }());
-
+	
 	    /**
 	     * Defines a schema that will allow:
 	     * - any non-Angular elements with a `-` in their name,
@@ -18987,7 +18999,7 @@
 	        schemas: undefined,
 	        id: undefined,
 	    });
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -19062,7 +19074,7 @@
 	        }
 	        return ViewMetadata;
 	    }());
-
+	
 	    /**
 	     * Allows to refer to references which are not yet defined.
 	     *
@@ -19101,7 +19113,7 @@
 	            return type;
 	        }
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -19167,7 +19179,7 @@
 	        });
 	        return WrappedError;
 	    }(BaseError));
-
+	
 	    var _THROW_IF_NOT_FOUND = new Object();
 	    var THROW_IF_NOT_FOUND = _THROW_IF_NOT_FOUND;
 	    var _NullInjector = (function () {
@@ -19217,7 +19229,7 @@
 	        Injector.NULL = new _NullInjector();
 	        return Injector;
 	    }());
-
+	
 	    // Safari doesn't implement MapIterator.next(), which is used is Traceur's polyfill of Array.from
 	    // TODO(mlaval): remove the work around once we have a working polyfill of Array.from
 	    var _arrayFromMap = (function () {
@@ -19452,7 +19464,7 @@
 	            }
 	        }
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -19571,7 +19583,7 @@
 	     * }
 	     *
 	     * var injector = Injector.resolveAndCreate([A]);
-
+	
 	     * try {
 	     *   injector.get(A);
 	     * } catch (e) {
@@ -19720,7 +19732,7 @@
 	        }
 	        return MixingMultiProvidersWithRegularProvidersError;
 	    }(BaseError));
-
+	
 	    /**
 	     * A unique object used for retrieving items from the {@link ReflectiveInjector}.
 	     *
@@ -19797,7 +19809,7 @@
 	        return KeyRegistry;
 	    }());
 	    var _globalKeyRegistry = new KeyRegistry();
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -19816,7 +19828,7 @@
 	     * @stable
 	     */
 	    var Type = Function;
-
+	
 	    var ReflectionCapabilities = (function () {
 	        function ReflectionCapabilities(reflect) {
 	            this._reflect = reflect || global$1.Reflect;
@@ -19964,7 +19976,7 @@
 	            return new (annotationCls.bind.apply(annotationCls, [void 0].concat(annotationArgs)))();
 	        });
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -19981,7 +19993,7 @@
 	        }
 	        return ReflectorReader;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -20030,13 +20042,13 @@
 	        };
 	        return Reflector;
 	    }(ReflectorReader));
-
+	
 	    /**
 	     * The {@link Reflector} used internally in Angular to access metadata
 	     * about symbols.
 	     */
 	    var reflector = new Reflector(new ReflectionCapabilities());
-
+	
 	    /**
 	     * `Dependency` is used by the framework to extend DI.
 	     * This is internal to Angular and should not be used directly.
@@ -20246,7 +20258,7 @@
 	    function _createDependency(token /** TODO #9100 */, optional /** TODO #9100 */, lowerBoundVisibility /** TODO #9100 */, upperBoundVisibility /** TODO #9100 */, depProps /** TODO #9100 */) {
 	        return new ReflectiveDependency(ReflectiveKey.get(token), optional, lowerBoundVisibility, upperBoundVisibility, depProps);
 	    }
-
+	
 	    // avoid unused import when Type union types are erased
 	    // Threshold for the dynamic version
 	    var _MAX_CONSTRUCTION_COUNTER = 10;
@@ -21044,7 +21056,7 @@
 	        }
 	        return res;
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -21144,7 +21156,7 @@
 	        };
 	        return ErrorHandler;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -21157,7 +21169,7 @@
 	        // It's up to the caller to ensure that obj.then conforms to the spec
 	        return !!obj && typeof obj.then === 'function';
 	    }
-
+	
 	    /**
 	     * A function that will be executed when an application is initialized.
 	     * @experimental
@@ -21205,7 +21217,7 @@
 	        ];
 	        return ApplicationInitStatus;
 	    }());
-
+	
 	    /**
 	     * A DI Token representing a unique string id assigned to the application by Angular and used
 	     * primarily for prefixing application attributes and CSS styles when
@@ -21251,7 +21263,7 @@
 	     * @experimental
 	     */
 	    var PACKAGE_ROOT_URL = new OpaqueToken('Application Packages Root URL');
-
+	
 	    var Console = (function () {
 	        function Console() {
 	        }
@@ -21265,7 +21277,7 @@
 	        Console.ctorParameters = [];
 	        return Console;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -21367,7 +21379,7 @@
 	        }
 	        return CompilerFactory;
 	    }());
-
+	
 	    var DefaultIterableDifferFactory = (function () {
 	        function DefaultIterableDifferFactory() {
 	        }
@@ -22075,7 +22087,7 @@
 	        }
 	        return previousIndex + addRemoveOffset + moveOffset;
 	    }
-
+	
 	    var DefaultKeyValueDifferFactory = (function () {
 	        function DefaultKeyValueDifferFactory() {
 	        }
@@ -22371,7 +22383,7 @@
 	        };
 	        return KeyValueChangeRecord;
 	    }());
-
+	
 	    /**
 	     * A repository of different iterable diffing strategies used by NgFor, NgClass, and others.
 	     * @stable
@@ -22436,7 +22448,7 @@
 	        };
 	        return IterableDiffers;
 	    }());
-
+	
 	    /**
 	     * A repository of different Map diffing strategies used by NgClass, NgStyle, and others.
 	     * @stable
@@ -22501,7 +22513,7 @@
 	        };
 	        return KeyValueDiffers;
 	    }());
-
+	
 	    var UNINITIALIZED = {
 	        toString: function () { return 'CD_INIT_VALUE'; }
 	    };
@@ -22574,7 +22586,7 @@
 	        SimpleChange.prototype.isFirstChange = function () { return this.previousValue === UNINITIALIZED; };
 	        return SimpleChange;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -22590,7 +22602,7 @@
 	        }
 	        return ChangeDetectorRef;
 	    }());
-
+	
 	    /**
 	     * Structural diffing for `Object`s and `Map`s.
 	     */
@@ -22601,7 +22613,7 @@
 	    var iterableDiff = [new DefaultIterableDifferFactory()];
 	    var defaultIterableDiffers = new IterableDiffers(iterableDiff);
 	    var defaultKeyValueDiffers = new KeyValueDiffers(keyValDiff);
-
+	
 	    /**
 	     * @experimental
 	     */
@@ -22678,7 +22690,7 @@
 	        }
 	        return RootRenderer;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -22714,7 +22726,7 @@
 	        }
 	        return Sanitizer;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -22743,7 +22755,7 @@
 	        }
 	        return ElementRef;
 	    }());
-
+	
 	    var trace;
 	    var events;
 	    function detectWTF() {
@@ -22771,7 +22783,7 @@
 	    function endTimeRange(range) {
 	        trace.endTimeRange(range);
 	    }
-
+	
 	    /**
 	     * True if WTF is enabled.
 	     */
@@ -22841,7 +22853,7 @@
 	     * @experimental
 	     */
 	    var wtfEndTimeRange = wtfEnabled ? endTimeRange : function (r) { return null; };
-
+	
 	    /**
 	     * Represents a container where one or more Views can be attached.
 	     *
@@ -22996,7 +23008,7 @@
 	        };
 	        return ViewContainerRef_;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -23016,7 +23028,7 @@
 	        // inside of a COMPONENT view
 	        ViewType[ViewType["EMBEDDED"] = 2] = "EMBEDDED";
 	    })(ViewType || (ViewType = {}));
-
+	
 	    /**
 	     * An AppElement is created for elements that have a ViewContainerRef,
 	     * a nested component or a <template> element to keep data around
@@ -23126,7 +23138,7 @@
 	        };
 	        return AppElement;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -23213,7 +23225,7 @@
 	        }
 	        return ViewDestroyedError;
 	    }(BaseError));
-
+	
 	    var ViewUtils = (function () {
 	        function ViewUtils(_renderer, _appId, sanitizer) {
 	            this._renderer = _renderer;
@@ -23536,8 +23548,8 @@
 	            return '-' + m[1].toLowerCase();
 	        });
 	    }
-
-
+	
+	
 	    var view_utils = Object.freeze({
 	        ViewUtils: ViewUtils,
 	        flattenNestedViewRenderNodes: flattenNestedViewRenderNodes,
@@ -23561,7 +23573,7 @@
 	        setBindingDebugInfoForChanges: setBindingDebugInfoForChanges,
 	        setBindingDebugInfo: setBindingDebugInfo
 	    });
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -23716,7 +23728,7 @@
 	        };
 	        return ComponentFactory;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -23775,7 +23787,7 @@
 	        };
 	        return CodegenComponentFactoryResolver;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -23880,7 +23892,7 @@
 	        };
 	        return EventEmitter;
 	    }(rxjs_Subject.Subject));
-
+	
 	    /**
 	     * An injectable service for executing work inside or outside of the Angular zone.
 	     *
@@ -24153,7 +24165,7 @@
 	        NgZone.prototype.triggerError = function (error) { this._onErrorEvents.emit(error); };
 	        return NgZone;
 	    }());
-
+	
 	    /**
 	     * The Testability service provides testing hooks that can be accessed from
 	     * the browser and by services such as Protractor. Each bootstrapped Angular
@@ -24299,7 +24311,7 @@
 	        _testabilityGetter = getter;
 	    }
 	    var _testabilityGetter = new _NoopGetTestability();
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -24763,7 +24775,7 @@
 	        ];
 	        return ApplicationRef_;
 	    }(ApplicationRef));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -24877,7 +24889,7 @@
 	        NgModuleInjector.prototype.onDestroy = function (callback) { this._destroyListeners.push(callback); };
 	        return NgModuleInjector;
 	    }(CodegenComponentFactoryResolver));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -24918,7 +24930,7 @@
 	            throw new Error("No module with ID " + id + " loaded");
 	        return factory;
 	    }
-
+	
 	    /**
 	     * An unmodifiable list of items that Angular keeps up to date when the state
 	     * of the application changes.
@@ -25017,7 +25029,7 @@
 	        });
 	        return QueryList;
 	    }());
-
+	
 	    var _SEPARATOR = '#';
 	    var FACTORY_CLASS_SUFFIX = 'NgFactory';
 	    /**
@@ -25085,7 +25097,7 @@
 	        }
 	        return value;
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -25152,7 +25164,7 @@
 	        });
 	        return TemplateRef_;
 	    }(TemplateRef));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -25173,7 +25185,7 @@
 	        }
 	        _queuedAnimations = [];
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -25312,7 +25324,7 @@
 	        ViewRef_.prototype.destroy = function () { this._view.destroy(); };
 	        return ViewRef_;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -25507,7 +25519,7 @@
 	    function removeDebugNodeFromIndex(node) {
 	        _nativeNodeToDebugNode.delete(node.nativeNode);
 	    }
-
+	
 	    function _reflector() {
 	        return reflector;
 	    }
@@ -25525,7 +25537,7 @@
 	     * @experimental
 	     */
 	    var platformCore = createPlatformFactory(null, 'core', _CORE_PLATFORM_PROVIDERS);
-
+	
 	    /**
 	     * @experimental i18n support is experimental.
 	     */
@@ -25538,7 +25550,7 @@
 	     * @experimental i18n support is experimental.
 	     */
 	    var TRANSLATIONS_FORMAT = new OpaqueToken('TranslationsFormat');
-
+	
 	    function _iterableDiffersFactory() {
 	        return defaultIterableDiffers;
 	    }
@@ -25573,7 +25585,7 @@
 	        ApplicationModule.ctorParameters = [];
 	        return ApplicationModule;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -25585,7 +25597,7 @@
 	    var ANY_STATE = '*';
 	    var DEFAULT_STATE = '*';
 	    var EMPTY_STATE = 'void';
-
+	
 	    var AnimationGroupPlayer = (function () {
 	        function AnimationGroupPlayer(_players) {
 	            var _this = this;
@@ -25660,7 +25672,7 @@
 	        };
 	        return AnimationGroupPlayer;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -25675,7 +25687,7 @@
 	        }
 	        return AnimationKeyframe;
 	    }());
-
+	
 	    /**
 	     * @experimental Animation support is experimental.
 	     */
@@ -25724,7 +25736,7 @@
 	        NoOpAnimationPlayer.prototype.getPosition = function () { return 0; };
 	        return NoOpAnimationPlayer;
 	    }());
-
+	
 	    var AnimationSequencePlayer = (function () {
 	        function AnimationSequencePlayer(_players) {
 	            var _this = this;
@@ -25804,7 +25816,7 @@
 	        AnimationSequencePlayer.prototype.getPosition = function () { return this._players[0].getPosition(); };
 	        return AnimationSequencePlayer;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -26475,7 +26487,7 @@
 	    function trigger(name, animation) {
 	        return new AnimationEntryMetadata(name, animation);
 	    }
-
+	
 	    function prepareFinalAnimationStyles(previousStyles, newStyles, nullValue) {
 	        if (nullValue === void 0) { nullValue = null; }
 	        var finalStyles = {};
@@ -26566,7 +26578,7 @@
 	        });
 	        return finalStyles;
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -26580,7 +26592,7 @@
 	        }
 	        return AnimationStyles;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -26629,7 +26641,7 @@
 	        }
 	        return AnimationTransitionEvent;
 	    }());
-
+	
 	    var AnimationTransition = (function () {
 	        function AnimationTransition(_player, _fromState, _toState, _totalTime) {
 	            this._player = _player;
@@ -26655,7 +26667,7 @@
 	        };
 	        return AnimationTransition;
 	    }());
-
+	
 	    var DebugDomRootRenderer = (function () {
 	        function DebugDomRootRenderer(_delegate) {
 	            this._delegate = _delegate;
@@ -26778,7 +26790,7 @@
 	        };
 	        return DebugDomRenderer;
 	    }());
-
+	
 	    var StaticNodeDebugInfo = (function () {
 	        function StaticNodeDebugInfo(providerTokens, componentToken, refTokens) {
 	            this.providerTokens = providerTokens;
@@ -26889,7 +26901,7 @@
 	        });
 	        return DebugContext;
 	    }());
-
+	
 	    var ViewAnimationMap = (function () {
 	        function ViewAnimationMap() {
 	            this._map = new Map();
@@ -26933,7 +26945,7 @@
 	        };
 	        return ViewAnimationMap;
 	    }());
-
+	
 	    var AnimationViewContext = (function () {
 	        function AnimationViewContext() {
 	            this._players = new ViewAnimationMap();
@@ -26967,7 +26979,7 @@
 	        };
 	        return AnimationViewContext;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -27001,7 +27013,7 @@
 	        };
 	        return ElementInjector;
 	    }(Injector));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -27380,7 +27392,7 @@
 	        }
 	        return lastNode;
 	    }
-
+	
 	    var __core_private__ = {
 	        isDefaultChangeDetectionStrategy: isDefaultChangeDetectionStrategy,
 	        ChangeDetectorStatus: ChangeDetectorStatus,
@@ -27430,7 +27442,7 @@
 	        isPromise: isPromise,
 	        AnimationTransition: AnimationTransition
 	    };
-
+	
 	    exports.createPlatform = createPlatform;
 	    exports.assertPlatform = assertPlatform;
 	    exports.destroyPlatform = destroyPlatform;
@@ -27559,13 +27571,16 @@
 	    exports.keyframes = keyframes;
 	    exports.transition = transition;
 	    exports.trigger = trigger;
-
+	
 	}));
-
+	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 4 */
+/*!***************************!*\
+  !*** ./~/rxjs/Subject.js ***!
+  \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27574,12 +27589,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(5);
-	var Subscriber_1 = __webpack_require__(8);
-	var Subscription_1 = __webpack_require__(10);
-	var ObjectUnsubscribedError_1 = __webpack_require__(19);
-	var SubjectSubscription_1 = __webpack_require__(20);
-	var rxSubscriber_1 = __webpack_require__(17);
+	var Observable_1 = __webpack_require__(/*! ./Observable */ 5);
+	var Subscriber_1 = __webpack_require__(/*! ./Subscriber */ 8);
+	var Subscription_1 = __webpack_require__(/*! ./Subscription */ 10);
+	var ObjectUnsubscribedError_1 = __webpack_require__(/*! ./util/ObjectUnsubscribedError */ 19);
+	var SubjectSubscription_1 = __webpack_require__(/*! ./SubjectSubscription */ 20);
+	var rxSubscriber_1 = __webpack_require__(/*! ./symbol/rxSubscriber */ 17);
 	/**
 	 * @class SubjectSubscriber<T>
 	 */
@@ -27731,12 +27746,15 @@
 
 /***/ },
 /* 5 */
+/*!******************************!*\
+  !*** ./~/rxjs/Observable.js ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
-	var toSubscriber_1 = __webpack_require__(7);
-	var observable_1 = __webpack_require__(18);
+	var root_1 = __webpack_require__(/*! ./util/root */ 6);
+	var toSubscriber_1 = __webpack_require__(/*! ./util/toSubscriber */ 7);
+	var observable_1 = __webpack_require__(/*! ./symbol/observable */ 18);
 	/**
 	 * A representation of any set of values over any amount of time. This the most basic building block
 	 * of RxJS.
@@ -27876,6 +27894,9 @@
 
 /***/ },
 /* 6 */
+/*!*****************************!*\
+  !*** ./~/rxjs/util/root.js ***!
+  \*****************************/
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {"use strict";
@@ -27897,11 +27918,14 @@
 
 /***/ },
 /* 7 */
+/*!*************************************!*\
+  !*** ./~/rxjs/util/toSubscriber.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Subscriber_1 = __webpack_require__(8);
-	var rxSubscriber_1 = __webpack_require__(17);
+	var Subscriber_1 = __webpack_require__(/*! ../Subscriber */ 8);
+	var rxSubscriber_1 = __webpack_require__(/*! ../symbol/rxSubscriber */ 17);
 	function toSubscriber(nextOrObserver, error, complete) {
 	    if (nextOrObserver) {
 	        if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -27921,6 +27945,9 @@
 
 /***/ },
 /* 8 */
+/*!******************************!*\
+  !*** ./~/rxjs/Subscriber.js ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27929,10 +27956,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isFunction_1 = __webpack_require__(9);
-	var Subscription_1 = __webpack_require__(10);
-	var Observer_1 = __webpack_require__(16);
-	var rxSubscriber_1 = __webpack_require__(17);
+	var isFunction_1 = __webpack_require__(/*! ./util/isFunction */ 9);
+	var Subscription_1 = __webpack_require__(/*! ./Subscription */ 10);
+	var Observer_1 = __webpack_require__(/*! ./Observer */ 16);
+	var rxSubscriber_1 = __webpack_require__(/*! ./symbol/rxSubscriber */ 17);
 	/**
 	 * Implements the {@link Observer} interface and extends the
 	 * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -28175,6 +28202,9 @@
 
 /***/ },
 /* 9 */
+/*!***********************************!*\
+  !*** ./~/rxjs/util/isFunction.js ***!
+  \***********************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28186,15 +28216,18 @@
 
 /***/ },
 /* 10 */
+/*!********************************!*\
+  !*** ./~/rxjs/Subscription.js ***!
+  \********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var isArray_1 = __webpack_require__(11);
-	var isObject_1 = __webpack_require__(12);
-	var isFunction_1 = __webpack_require__(9);
-	var tryCatch_1 = __webpack_require__(13);
-	var errorObject_1 = __webpack_require__(14);
-	var UnsubscriptionError_1 = __webpack_require__(15);
+	var isArray_1 = __webpack_require__(/*! ./util/isArray */ 11);
+	var isObject_1 = __webpack_require__(/*! ./util/isObject */ 12);
+	var isFunction_1 = __webpack_require__(/*! ./util/isFunction */ 9);
+	var tryCatch_1 = __webpack_require__(/*! ./util/tryCatch */ 13);
+	var errorObject_1 = __webpack_require__(/*! ./util/errorObject */ 14);
+	var UnsubscriptionError_1 = __webpack_require__(/*! ./util/UnsubscriptionError */ 15);
 	/**
 	 * Represents a disposable resource, such as the execution of an Observable. A
 	 * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -28344,6 +28377,9 @@
 
 /***/ },
 /* 11 */
+/*!********************************!*\
+  !*** ./~/rxjs/util/isArray.js ***!
+  \********************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28352,6 +28388,9 @@
 
 /***/ },
 /* 12 */
+/*!*********************************!*\
+  !*** ./~/rxjs/util/isObject.js ***!
+  \*********************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28363,10 +28402,13 @@
 
 /***/ },
 /* 13 */
+/*!*********************************!*\
+  !*** ./~/rxjs/util/tryCatch.js ***!
+  \*********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var errorObject_1 = __webpack_require__(14);
+	var errorObject_1 = __webpack_require__(/*! ./errorObject */ 14);
 	var tryCatchTarget;
 	function tryCatcher() {
 	    try {
@@ -28387,6 +28429,9 @@
 
 /***/ },
 /* 14 */
+/*!************************************!*\
+  !*** ./~/rxjs/util/errorObject.js ***!
+  \************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28396,6 +28441,9 @@
 
 /***/ },
 /* 15 */
+/*!********************************************!*\
+  !*** ./~/rxjs/util/UnsubscriptionError.js ***!
+  \********************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28426,6 +28474,9 @@
 
 /***/ },
 /* 16 */
+/*!****************************!*\
+  !*** ./~/rxjs/Observer.js ***!
+  \****************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28439,10 +28490,13 @@
 
 /***/ },
 /* 17 */
+/*!***************************************!*\
+  !*** ./~/rxjs/symbol/rxSubscriber.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
+	var root_1 = __webpack_require__(/*! ../util/root */ 6);
 	var Symbol = root_1.root.Symbol;
 	exports.$$rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
 	    Symbol.for('rxSubscriber') : '@@rxSubscriber';
@@ -28450,10 +28504,13 @@
 
 /***/ },
 /* 18 */
+/*!*************************************!*\
+  !*** ./~/rxjs/symbol/observable.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
+	var root_1 = __webpack_require__(/*! ../util/root */ 6);
 	function getSymbolObservable(context) {
 	    var $$observable;
 	    var Symbol = context.Symbol;
@@ -28477,6 +28534,9 @@
 
 /***/ },
 /* 19 */
+/*!************************************************!*\
+  !*** ./~/rxjs/util/ObjectUnsubscribedError.js ***!
+  \************************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28509,6 +28569,9 @@
 
 /***/ },
 /* 20 */
+/*!***************************************!*\
+  !*** ./~/rxjs/SubjectSubscription.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28517,7 +28580,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscription_1 = __webpack_require__(10);
+	var Subscription_1 = __webpack_require__(/*! ./Subscription */ 10);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -28554,6 +28617,9 @@
 
 /***/ },
 /* 21 */
+/*!*********************************************************************!*\
+  !*** ./~/@angular/platform-browser/bundles/platform-browser.umd.js ***!
+  \*********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -28562,14 +28628,14 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(22), __webpack_require__(3)) :
+	     true ? factory(exports, __webpack_require__(/*! @angular/common */ 22), __webpack_require__(/*! @angular/core */ 3)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/common', '@angular/core'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.platformBrowser = global.ng.platformBrowser || {}),global.ng.common,global.ng.core));
 	}(this, function (exports,_angular_common,_angular_core) { 'use strict';
-
+	
 	    var DebugDomRootRenderer = _angular_core.__core_private__.DebugDomRootRenderer;
 	    var NoOpAnimationPlayer = _angular_core.__core_private__.NoOpAnimationPlayer;
-
+	
 	    var _NoOpAnimationDriver = (function () {
 	        function _NoOpAnimationDriver() {
 	        }
@@ -28587,7 +28653,7 @@
 	        AnimationDriver.NOOP = new _NoOpAnimationDriver();
 	        return AnimationDriver;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -28657,7 +28723,7 @@
 	        }
 	        obj[parts.shift()] = value;
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -28685,7 +28751,7 @@
 	            return m[1].toUpperCase();
 	        });
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -28727,7 +28793,7 @@
 	        ;
 	        return DomAdapter;
 	    }());
-
+	
 	    var WebAnimationsPlayer = (function () {
 	        function WebAnimationsPlayer(element, keyframes, options) {
 	            this.element = element;
@@ -28815,7 +28881,7 @@
 	    function _computeStyle(element, prop) {
 	        return getDOM().getComputedStyle(element)[prop];
 	    }
-
+	
 	    var WebAnimationsDriver = (function () {
 	        function WebAnimationsDriver() {
 	        }
@@ -28931,7 +28997,7 @@
 	                return false;
 	        }
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -29003,7 +29069,7 @@
 	        };
 	        return GenericBrowserDomAdapter;
 	    }(DomAdapter));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -29403,7 +29469,7 @@
 	        }
 	        return null;
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -29414,7 +29480,7 @@
 	    function supportsState() {
 	        return !!window.history.pushState;
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -29497,7 +29563,7 @@
 	        BrowserPlatformLocation.ctorParameters = [];
 	        return BrowserPlatformLocation;
 	    }(_angular_common.PlatformLocation));
-
+	
 	    // Safari doesn't implement MapIterator.next(), which is used is Traceur's polyfill of Array.from
 	    // TODO(mlaval): remove the work around once we have a working polyfill of Array.from
 	    var _arrayFromMap = (function () {
@@ -29683,7 +29749,7 @@
 	        }
 	        return target;
 	    }
-
+	
 	    var BrowserGetTestability = (function () {
 	        function BrowserGetTestability() {
 	        }
@@ -29737,7 +29803,7 @@
 	        };
 	        return BrowserGetTestability;
 	    }());
-
+	
 	    /**
 	     * A service that can be used to get and set the title of a current HTML document.
 	     *
@@ -29763,7 +29829,7 @@
 	        Title.prototype.setTitle = function (newTitle) { getDOM().setTitle(newTitle); };
 	        return Title;
 	    }());
-
+	
 	    /**
 	     * A DI Token representing the main rendering context. In a browser this is the DOM Document.
 	     *
@@ -29773,7 +29839,7 @@
 	     * @stable
 	     */
 	    var DOCUMENT = new _angular_core.OpaqueToken('DocumentToken');
-
+	
 	    /**
 	     * @stable
 	     */
@@ -29831,7 +29897,7 @@
 	        };
 	        return EventManagerPlugin;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -29904,7 +29970,7 @@
 	        ];
 	        return DomSharedStylesHost;
 	    }(SharedStylesHost));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -30182,7 +30248,7 @@
 	        var match = name.match(NS_PREFIX_RE);
 	        return [match[1], match[2]];
 	    }
-
+	
 	    var CORE_TOKENS = {
 	        'ApplicationRef': _angular_core.ApplicationRef,
 	        'NgZone': _angular_core.NgZone
@@ -30234,7 +30300,7 @@
 	            useFactory: _createRootRenderer,
 	            deps: [DomRootRenderer, [NgProbeToken, new _angular_core.Optional()]]
 	        }];
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -30273,7 +30339,7 @@
 	        DomEventsPlugin.ctorParameters = [];
 	        return DomEventsPlugin;
 	    }(EventManagerPlugin));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -30333,7 +30399,7 @@
 	        };
 	        return HammerGesturesPluginCommon;
 	    }(EventManagerPlugin));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -30415,7 +30481,7 @@
 	        ];
 	        return HammerGesturesPlugin;
 	    }(HammerGesturesPluginCommon));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -30522,7 +30588,7 @@
 	        KeyEventsPlugin.ctorParameters = [];
 	        return KeyEventsPlugin;
 	    }(EventManagerPlugin));
-
+	
 	    /**
 	     * A pattern that recognizes a commonly useful subset of URLs that are safe.
 	     *
@@ -30565,7 +30631,7 @@
 	        srcset = String(srcset);
 	        return srcset.split(',').map(function (srcset) { return sanitizeUrl(srcset.trim()); }).join(', ');
 	    }
-
+	
 	    /** A <body> element that can be safely used to parse untrusted HTML. Lazily initialized below. */
 	    var inertElement = null;
 	    /** Lazily initialized to make sure the DOM adapter gets set before use. */
@@ -30820,7 +30886,7 @@
 	            throw e;
 	        }
 	    }
-
+	
 	    /**
 	     * Regular expression for safe style values.
 	     *
@@ -30901,7 +30967,7 @@
 	        }
 	        return 'unsafe';
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -31064,7 +31130,7 @@
 	        SafeResourceUrlImpl.prototype.getTypeName = function () { return 'ResourceURL'; };
 	        return SafeResourceUrlImpl;
 	    }(SafeValueImpl));
-
+	
 	    var INTERNAL_BROWSER_PLATFORM_PROVIDERS = [
 	        { provide: _angular_core.PLATFORM_INITIALIZER, useValue: initDomAdapter, multi: true },
 	        { provide: _angular_common.PlatformLocation, useClass: BrowserPlatformLocation }
@@ -31134,7 +31200,7 @@
 	        ];
 	        return BrowserModule;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -31146,7 +31212,7 @@
 	     * JS version of browser APIs. This library can only run in the browser.
 	     */
 	    var win = typeof window !== 'undefined' && window || {};
-
+	
 	    var ChangeDetectionPerfRecord = (function () {
 	        function ChangeDetectionPerfRecord(msPerTick, numTicks) {
 	            this.msPerTick = msPerTick;
@@ -31217,7 +31283,7 @@
 	        };
 	        return AngularProfiler;
 	    }());
-
+	
 	    var context = global$1;
 	    /**
 	     * Enabled Angular 2 debug tools that are accessible via your browser's
@@ -31244,7 +31310,7 @@
 	    function disableDebugTools() {
 	        delete context.ng;
 	    }
-
+	
 	    /**
 	     * Predicates for use with {@link DebugElement}'s query functions.
 	     *
@@ -31287,7 +31353,7 @@
 	        };
 	        return By;
 	    }());
-
+	
 	    var __platform_browser_private__ = {
 	        BrowserPlatformLocation: BrowserPlatformLocation,
 	        DomAdapter: DomAdapter,
@@ -31307,7 +31373,7 @@
 	        INTERNAL_BROWSER_PLATFORM_PROVIDERS: INTERNAL_BROWSER_PLATFORM_PROVIDERS,
 	        BROWSER_SANITIZATION_PROVIDERS: BROWSER_SANITIZATION_PROVIDERS
 	    };
-
+	
 	    exports.BrowserModule = BrowserModule;
 	    exports.platformBrowser = platformBrowser;
 	    exports.Title = Title;
@@ -31323,13 +31389,16 @@
 	    exports.HammerGestureConfig = HammerGestureConfig;
 	    exports.DomSanitizer = DomSanitizer;
 	    exports.__platform_browser_private__ = __platform_browser_private__;
-
+	
 	}));
-
+	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 22 */
+/*!*************************************************!*\
+  !*** ./~/@angular/common/bundles/common.umd.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -31338,11 +31407,11 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(3)) :
+	     true ? factory(exports, __webpack_require__(/*! @angular/core */ 3)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.common = global.ng.common || {}),global.ng.core));
 	}(this, function (exports,_angular_core) { 'use strict';
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -31396,7 +31465,7 @@
 	        });
 	        return PlatformLocation;
 	    }());
-
+	
 	    /**
 	     * `LocationStrategy` is responsible for representing and reading route state
 	     * from the browser's URL. Angular provides two strategies:
@@ -31443,7 +31512,7 @@
 	     * @stable
 	     */
 	    var APP_BASE_HREF = new _angular_core.OpaqueToken('appBaseHref');
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -31557,7 +31626,7 @@
 	        }
 	        return _symbolIterator;
 	    }
-
+	
 	    /**
 	     * `Location` is a service that applications can use to interact with a browser's URL.
 	     * Depending on which {@link LocationStrategy} is used, `Location` will either persist
@@ -31737,7 +31806,7 @@
 	        }
 	        return url;
 	    }
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -31830,7 +31899,7 @@
 	        ];
 	        return HashLocationStrategy;
 	    }(LocationStrategy));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -31914,7 +31983,7 @@
 	        ];
 	        return PathLocationStrategy;
 	    }(LocationStrategy));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -32400,7 +32469,7 @@
 	                return Plural.Other;
 	        }
 	    }
-
+	
 	    // Safari doesn't implement MapIterator.next(), which is used is Traceur's polyfill of Array.from
 	    // TODO(mlaval): remove the work around once we have a working polyfill of Array.from
 	    var _arrayFromMap = (function () {
@@ -32559,7 +32628,7 @@
 	            (!(obj instanceof Map) &&
 	                getSymbolIterator() in obj); // JS Iterable have a Symbol.iterator prop
 	    }
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     *
@@ -32696,7 +32765,7 @@
 	        };
 	        return NgClass;
 	    }());
-
+	
 	    var NgForRow = (function () {
 	        function NgForRow($implicit, index, count) {
 	            this.$implicit = $implicit;
@@ -32886,7 +32955,7 @@
 	        }
 	        return RecordViewTuple;
 	    }());
-
+	
 	    /**
 	     * Removes or recreates a portion of the DOM tree based on an {expression}.
 	     *
@@ -32944,7 +33013,7 @@
 	        };
 	        return NgIf;
 	    }());
-
+	
 	    var _CASE_DEFAULT = {};
 	    var SwitchView = (function () {
 	        function SwitchView(_viewContainerRef, _templateRef) {
@@ -33184,7 +33253,7 @@
 	        ];
 	        return NgSwitchDefault;
 	    }());
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     *
@@ -33294,7 +33363,7 @@
 	        ];
 	        return NgPluralCase;
 	    }());
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     *
@@ -33366,7 +33435,7 @@
 	        };
 	        return NgStyle;
 	    }());
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     *
@@ -33424,7 +33493,7 @@
 	        };
 	        return NgTemplateOutlet;
 	    }());
-
+	
 	    /**
 	     * A collection of Angular directives that are likely to be used in each and every Angular
 	     * application.
@@ -33441,9 +33510,9 @@
 	        NgPlural,
 	        NgPluralCase,
 	    ];
-
+	
 	    var isPromise = _angular_core.__core_private__.isPromise;
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -33506,7 +33575,7 @@
 	        });
 	        return WrappedError;
 	    }(BaseError));
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -33526,7 +33595,7 @@
 	        }
 	        return InvalidPipeArgumentError;
 	    }(BaseError));
-
+	
 	    var ObservableStrategy = (function () {
 	        function ObservableStrategy() {
 	        }
@@ -33643,7 +33712,7 @@
 	        ];
 	        return AsyncPipe;
 	    }());
-
+	
 	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
@@ -33839,7 +33908,7 @@
 	        };
 	        return DateFormatter;
 	    }());
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     * @whatItDoes Formats a date according to locale rules.
@@ -33946,7 +34015,7 @@
 	        ];
 	        return DatePipe;
 	    }());
-
+	
 	    var _INTERPOLATION_REGEXP = /#/g;
 	    /**
 	     * @ngModule CommonModule
@@ -33987,7 +34056,7 @@
 	        ];
 	        return I18nPluralPipe;
 	    }());
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     * @whatItDoes Generic selector that displays the string that matches the current value.
@@ -34022,7 +34091,7 @@
 	        I18nSelectPipe.ctorParameters = [];
 	        return I18nSelectPipe;
 	    }());
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     * @whatItDoes Converts value into JSON string.
@@ -34047,7 +34116,7 @@
 	        JsonPipe.ctorParameters = [];
 	        return JsonPipe;
 	    }());
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     * @whatItDoes Transforms string to lowercase.
@@ -34080,7 +34149,7 @@
 	        LowerCasePipe.ctorParameters = [];
 	        return LowerCasePipe;
 	    }());
-
+	
 	    var _NUMBER_FORMAT_REGEXP = /^(\d+)?\.((\d+)(-(\d+))?)?$/;
 	    function formatNumber(pipe, locale, value, style, digits, currency, currencyAsSymbol) {
 	        if (currency === void 0) { currency = null; }
@@ -34248,7 +34317,7 @@
 	        ];
 	        return CurrencyPipe;
 	    }());
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     * @whatItDoes Creates a new List or String containing a subset (slice) of the elements.
@@ -34312,7 +34381,7 @@
 	        SlicePipe.ctorParameters = [];
 	        return SlicePipe;
 	    }());
-
+	
 	    /**
 	     * @ngModule CommonModule
 	     * @whatItDoes Transforms string to uppercase.
@@ -34345,7 +34414,7 @@
 	        UpperCasePipe.ctorParameters = [];
 	        return UpperCasePipe;
 	    }());
-
+	
 	    /**
 	     * A collection of Angular pipes that are likely to be used in each and every application.
 	     */
@@ -34362,7 +34431,7 @@
 	        I18nPluralPipe,
 	        I18nSelectPipe,
 	    ];
-
+	
 	    // Note: This does not contain the location providers,
 	    // as they need some platform specific implementations to work.
 	    /**
@@ -34386,7 +34455,7 @@
 	        CommonModule.ctorParameters = [];
 	        return CommonModule;
 	    }());
-
+	
 	    exports.NgLocalization = NgLocalization;
 	    exports.CommonModule = CommonModule;
 	    exports.NgClass = NgClass;
@@ -34416,15 +34485,18 @@
 	    exports.HashLocationStrategy = HashLocationStrategy;
 	    exports.PathLocationStrategy = PathLocationStrategy;
 	    exports.Location = Location;
-
+	
 	}));
-
+	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 23 */,
 /* 24 */,
 /* 25 */
+/*!****************************************************!*\
+  !*** ./002_one_way_data_binding/src/app.module.ts ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34434,11 +34506,14 @@
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
 	    return c > 3 && r && Object.defineProperty(target, key, r), r;
 	};
-	var core_1 = __webpack_require__(3);
-	var platform_browser_1 = __webpack_require__(21);
-	var app_component_1 = __webpack_require__(26);
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 26);
 	// каждое корневое приложение angular2 использует корневой модуль (root module) 
-	// декоратор @NgModule определяет метаданные, которые будет использовать модуль)
+	// декоратор @NgModule определяет метаданные, которые будет использовать модуль
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -34447,7 +34522,8 @@
 	            imports: [platform_browser_1.BrowserModule],
 	            declarations: [app_component_1.AppComponent],
 	            bootstrap: [app_component_1.AppComponent]
-	        })
+	        }), 
+	        __metadata('design:paramtypes', [])
 	    ], AppModule);
 	    return AppModule;
 	}());
@@ -34456,6 +34532,9 @@
 
 /***/ },
 /* 26 */
+/*!*******************************************************!*\
+  !*** ./002_one_way_data_binding/src/app.component.ts ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34465,7 +34544,10 @@
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
 	    return c > 3 && r && Object.defineProperty(target, key, r), r;
 	};
-	var core_1 = __webpack_require__(3);
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	// В данном примере показана односторонняя привязка данных в Angular2
 	var AppComponent = (function () {
 	    function AppComponent() {
@@ -34480,7 +34562,8 @@
 	            selector: 'my-app',
 	            // Для привязки данных используется синтаксис {{prop}}, где prop - имя свойства, значение которого используется 
 	            template: "<h1>Hello from Angular2!</h1> \n\t<h2>{{title}}</h2> \n\t<h3>{{num}}</h3> \n\t<h4>{{obj.prop}}</h4>"
-	        })
+	        }), 
+	        __metadata('design:paramtypes', [])
 	    ], AppComponent);
 	    return AppComponent;
 	}());
@@ -34489,3 +34572,4 @@
 
 /***/ }
 /******/ ]);
+//# sourceMappingURL=bundle.js.map

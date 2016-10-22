@@ -1,5 +1,4 @@
 ///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>"
-"use strict";
 // Браузерная платформа
 var platform_browser_dynamic_1 = require('../../node_modules/@angular/platform-browser-dynamic');
 // Модуль приложения
