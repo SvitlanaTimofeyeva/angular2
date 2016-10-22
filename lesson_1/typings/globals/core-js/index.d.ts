@@ -746,38 +746,38 @@ declare function $for<T>(iterable: Iterable<T>): $for<T>;
 // Modules: es6.promise
 // #############################################################################################
 
-interface PromiseLike<T> {
-    /**
-    * Attaches callbacks for the resolution and/or rejection of the Promise.
-    * @param onfulfilled The callback to execute when the Promise is resolved.
-    * @param onrejected The callback to execute when the Promise is rejected.
-    * @returns A Promise for the completion of which ever callback is executed.
-    */
-    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => TResult | PromiseLike<TResult>): PromiseLike<TResult>;
-    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => void): PromiseLike<TResult>;
-}
+//interface PromiseLike<T> {
+//    /**
+//    * Attaches callbacks for the resolution and/or rejection of the Promise.
+//    * @param onfulfilled The callback to execute when the Promise is resolved.
+//    * @param onrejected The callback to execute when the Promise is rejected.
+//    * @returns A Promise for the completion of which ever callback is executed.
+//    */
+//    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => TResult | PromiseLike<TResult>): PromiseLike<TResult>;
+//    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => void): PromiseLike<TResult>;
+//}
 
-/**
- * Represents the completion of an asynchronous operation
- */
-interface Promise<T> {
-    /**
-    * Attaches callbacks for the resolution and/or rejection of the Promise.
-    * @param onfulfilled The callback to execute when the Promise is resolved.
-    * @param onrejected The callback to execute when the Promise is rejected.
-    * @returns A Promise for the completion of which ever callback is executed.
-    */
-    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => TResult | PromiseLike<TResult>): Promise<TResult>;
-    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => void): Promise<TResult>;
+///**
+// * Represents the completion of an asynchronous operation
+// */
+//interface Promise<T> {
+//    /**
+//    * Attaches callbacks for the resolution and/or rejection of the Promise.
+//    * @param onfulfilled The callback to execute when the Promise is resolved.
+//    * @param onrejected The callback to execute when the Promise is rejected.
+//    * @returns A Promise for the completion of which ever callback is executed.
+//    */
+//    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => TResult | PromiseLike<TResult>): Promise<TResult>;
+//    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => void): Promise<TResult>;
 
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch(onrejected?: (reason: any) => T | PromiseLike<T>): Promise<T>;
-    catch(onrejected?: (reason: any) => void): Promise<T>;
-}
+//    /**
+//     * Attaches a callback for only the rejection of the Promise.
+//     * @param onrejected The callback to execute when the Promise is rejected.
+//     * @returns A Promise for the completion of the callback.
+//     */
+//    catch(onrejected?: (reason: any) => T | PromiseLike<T>): Promise<T>;
+//    catch(onrejected?: (reason: any) => void): Promise<T>;
+//}
 
 interface PromiseConstructor {
     /**
@@ -846,7 +846,7 @@ interface PromiseConstructor {
     resolve(): Promise<void>;
 }
 
-declare var Promise: PromiseConstructor;
+//declare var Promise: PromiseConstructor;
 
 // #############################################################################################
 // ECMAScript 6: Reflect

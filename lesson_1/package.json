@@ -11,7 +11,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC", 
+  "license": "ISC",
   "dependencies": {
     "@angular/common": "~2.1.0",
     "@angular/compiler": "~2.1.0",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "concurrently": "^3.0.0",
+    "html-loader": "^0.4.4",
     "lite-server": "^2.2.2",
     "ts-loader": "^0.9.5",
     "typescript": "^2.0.3",
