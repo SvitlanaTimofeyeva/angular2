@@ -8,7 +8,8 @@ module.exports = {
        '006_reference_variables/build/bundle': './006_reference_variables/src/main.ts',
        '007_nested_components/build/bundle': './007_nested_components/src/main.ts', 
        '008_component_styles_1/build/bundle': './008_component_styles_1/src/main.ts',
-       '009_component_styles_2/build/bundle': './009_component_styles_2/src/main.ts'
+       '009_component_styles_2/build/bundle': './009_component_styles_2/src/main.ts', 
+       '010_component_styles_3/build/bundle': './010_component_styles_3/src/main.ts'
    }, 
    output: {
         filename: '[name].js'

@@ -6,8 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var app_parent_component_1 = require('./app.parent.component');
-var app_child_component_1 = require('./app.child.component');
+var app_component_1 = require('./app.component');
 // каждое корневое приложение angular2 использует корневой модуль (root module) 
 // декоратор @NgModule определяет метаданные, которые будет использовать модуль 
 var AppModule = (function () {
@@ -16,8 +15,8 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
-            declarations: [app_parent_component_1.ParentComponent, app_child_component_1.ChildComponent],
-            bootstrap: [app_parent_component_1.ParentComponent, app_child_component_1.ChildComponent]
+            declarations: [app_component_1.AppComponent],
+            bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
     return AppModule;

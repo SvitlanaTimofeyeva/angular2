@@ -1,3 +1,10 @@
 1. built-in dirs for displaying data
 2. multiple components 
-3. component input-output 
+3. component input-output  
+
+aka 
+
+1.ngFor 
+2. ngPlural 
+3. ngFor 
+4. for of ts 

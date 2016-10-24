@@ -18,8 +18,9 @@ import { Component } from '@angular/core'
 export class AppComponent { 
     title = 'Data binding sample!'; 
     type = 'button'; 
+    clickMessage = 'Click'; 
 
     clicked() {
-        this.clickMessage = 'Click';
+        this.clickMessage = 'Click'; 
     }
 }

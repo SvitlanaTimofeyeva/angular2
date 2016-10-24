@@ -34556,6 +34556,7 @@
 	    function AppComponent() {
 	        this.title = 'Data binding sample!';
 	        this.type = 'button';
+	        this.clickMessage = 'Click';
 	    }
 	    AppComponent.prototype.clicked = function () {
 	        this.clickMessage = 'Click';

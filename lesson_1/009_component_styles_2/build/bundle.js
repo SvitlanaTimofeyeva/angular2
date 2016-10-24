@@ -34529,8 +34529,7 @@
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
-	var app_parent_component_1 = __webpack_require__(/*! ./app.parent.component */ 45);
-	var app_child_component_1 = __webpack_require__(/*! ./app.child.component */ 46);
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 45);
 	// каждое корневое приложение angular2 использует корневой модуль (root module) 
 	// декоратор @NgModule определяет метаданные, которые будет использовать модуль 
 	var AppModule = (function () {
@@ -34539,8 +34538,8 @@
 	    AppModule = __decorate([
 	        core_1.NgModule({
 	            imports: [platform_browser_1.BrowserModule],
-	            declarations: [app_parent_component_1.ParentComponent, app_child_component_1.ChildComponent],
-	            bootstrap: [app_parent_component_1.ParentComponent, app_child_component_1.ChildComponent]
+	            declarations: [app_component_1.AppComponent],
+	            bootstrap: [app_component_1.AppComponent]
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppModule);
@@ -34551,9 +34550,9 @@
 
 /***/ },
 /* 45 */
-/*!************************************************************!*\
-  !*** ./009_component_styles_2/src/app.parent.component.ts ***!
-  \************************************************************/
+/*!*****************************************************!*\
+  !*** ./009_component_styles_2/src/app.component.ts ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34567,56 +34566,20 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var ParentComponent = (function () {
-	    function ParentComponent() {
+	var AppComponent = (function () {
+	    function AppComponent() {
 	    }
-	    ParentComponent = __decorate([
+	    AppComponent = __decorate([
 	        core_1.Component({
-	            selector: 'parent',
-	            // свойство /deep/ или >>> (альтернативный вариант записи) означает, что стили будут применены ко всем дочерним компонентам данного компонента 
-	            styles: ["\n        :host /deep/ h3 {\n          font-style: italic;\n        } \n    "],
-	            template: "\n        <div class=\"panel well\">\n            <child></child>\n        </div>\n    "
+	            selector: 'my-app',
+	            // стили компонента могут быть добавлены непосредственно в шаблон (через использование тега style)
+	            template: "\n        <style> \n        .one {\n\t\t\tbackground-color: blue;\n\t\t\tcolor: #ffc4c4;\n\t\t\twidth: 200px;\n\t\t\theight: 200px;\n\t\t\tborder-radius: 20px;\n\t\t\ttext-align: center;\n\t\t\tfont-size: 25px; \n            padding-top: 60px;\n        } \n        .two {\n\t\t\tbackground-color: #ffc4c4;\n\t\t\tcolor: blue;\n\t\t\twidth: 200px;\n\t\t\theight: 200px;\n\t\t\tborder-radius: 20px;\n\t\t\ttext-align: center;\n\t\t\tfont-size: 25px; \n            padding-top: 60px;\n        } \n        </style>\n        <div class=\"one\"><h3>Style Demo 1</h3></div> \n        <div class=\"two\"><h3>Style Demo 2</h3></div>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
-	    ], ParentComponent);
-	    return ParentComponent;
+	    ], AppComponent);
+	    return AppComponent;
 	}());
-	exports.ParentComponent = ParentComponent;
-
-
-/***/ },
-/* 46 */
-/*!***********************************************************!*\
-  !*** ./009_component_styles_2/src/app.child.component.ts ***!
-  \***********************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var ChildComponent = (function () {
-	    function ChildComponent() {
-	    }
-	    ChildComponent = __decorate([
-	        core_1.Component({
-	            selector: 'child',
-	            // � angular2 ���� ����������� css ����������� :host, ������� ��������� ������ ����� ��������, � ������� ������������ ��������� 
-	            styles: ["\n        :host {\n            background-color: violet; \n            display: block; \n            border-radius: 20px; \n            width:200px; \n            height: 100px; \n            padding: 15px;\n            text-align: center;\n        } \n       /* \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD, \uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD css \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD active */\n        :host(.active) h3 {\n          font-style: italic;\n        }\n    "],
-	            template: "\n        <div><h3>Style Demo</h3></div> \n    "
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], ChildComponent);
-	    return ChildComponent;
-	}());
-	exports.ChildComponent = ChildComponent;
+	exports.AppComponent = AppComponent;
 
 
 /***/ }
