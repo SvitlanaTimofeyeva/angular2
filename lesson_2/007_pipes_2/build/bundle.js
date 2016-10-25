@@ -43,7 +43,7 @@
 /******/ ([
 /* 0 */
 /*!*********************************!*\
-  !*** ./004_ngStyle/src/main.ts ***!
+  !*** ./007_pipes_2/src/main.ts ***!
   \*********************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -51,7 +51,7 @@
 	// Браузерная платформа
 	var platform_browser_dynamic_1 = __webpack_require__(/*! @angular/platform-browser-dynamic */ 1);
 	// Модуль приложения
-	var app_module_1 = __webpack_require__(/*! ./app.module */ 33);
+	var app_module_1 = __webpack_require__(/*! ./app.module */ 39);
 	// Компилляция и запуск модуля 
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
@@ -34500,9 +34500,15 @@
 /* 30 */,
 /* 31 */,
 /* 32 */,
-/* 33 */
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */
 /*!***************************************!*\
-  !*** ./004_ngStyle/src/app.module.ts ***!
+  !*** ./007_pipes_2/src/app.module.ts ***!
   \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -34518,7 +34524,7 @@
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
-	var app_component_1 = __webpack_require__(/*! ./app.component */ 34);
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 40);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -34536,9 +34542,9 @@
 
 
 /***/ },
-/* 34 */
+/* 40 */
 /*!******************************************!*\
-  !*** ./004_ngStyle/src/app.component.ts ***!
+  !*** ./007_pipes_2/src/app.component.ts ***!
   \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -34555,15 +34561,14 @@
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	var AppComponent = (function () {
 	    function AppComponent() {
+	        this.items = [{ name: "Item 1", price: 10.9, category: "Category 1", count: 10000, tax: 1.12, expiration: 10 },
+	            { name: "Item 2", price: 1.1, category: "Category 1", count: 8, tax: 0.55, expiration: 12 },
+	            { name: "Item 3", price: 2.6, category: "Category 2", count: 7, tax: 0.22, expiration: 5 },
+	            { name: "Item 4", price: 17.5, category: "Category 2", count: 33, tax: 2.77, expiration: 10 }];
 	    }
 	    AppComponent = __decorate([
 	        core_1.Component({
-	            selector: 'my-app',
-	            // Директива ngStyle позволяет задавать стили элементам
-	            // Синтаксис: 
-	            // <some - element[ngStyle]="{'font-style': styleExp}" >...</some-element> 
-	            // <some-element [ngStyle]="objExp">...</some-element> 
-	            template: " \n        <div class=\"panel well\">\n           <div [ngStyle]=\"{'width': '100px', 'height': '100px', 'background-color': 'red', 'border-radius': '20px'}\"></div>\n        </div>\n        <div class=\"panel well\">\n           <div [style.background] = \"blue\" [style.width.px] = \"100\" [style.height.px] = \"100\" [style.borderRadius] = \"20\"></div>\n        </div>\n    "
+	            template: "\n        <div class=\"panel well\">\n            <h1>{{title}}</h1> \n            <table>\n                <thead>\n                    <tr>\n                       <th>Name</th>\n                       <th>Price</th>\n                       <th>Category</th>\n                       <th>Count</th>\n                       <th>Tax</th>\n                       <th>Expiration</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor = \"item of items\">\n                        <td>{{item.name}}</td>\n                        <td>{{item.price}}</td>\n                        <td>{{item.category}}</td>\n                        <td>{{item.count}}</td>\n                        <td>{{item.tax}}</td>\n                        <td>{{item.expiration}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppComponent);

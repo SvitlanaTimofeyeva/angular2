@@ -43,7 +43,7 @@
 /******/ ([
 /* 0 */
 /*!*********************************!*\
-  !*** ./006_ngClass/src/main.ts ***!
+  !*** ./005_ngClass/src/main.ts ***!
   \*********************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -39203,7 +39203,7 @@
 /* 34 */,
 /* 35 */
 /*!***************************************!*\
-  !*** ./006_ngClass/src/app.module.ts ***!
+  !*** ./005_ngClass/src/app.module.ts ***!
   \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -39240,7 +39240,7 @@
 /***/ },
 /* 36 */
 /*!******************************************!*\
-  !*** ./006_ngClass/src/app.component.ts ***!
+  !*** ./005_ngClass/src/app.component.ts ***!
   \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 

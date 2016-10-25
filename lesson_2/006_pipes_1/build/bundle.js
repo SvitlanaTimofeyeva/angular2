@@ -43,7 +43,7 @@
 /******/ ([
 /* 0 */
 /*!*********************************!*\
-  !*** ./004_ngStyle/src/main.ts ***!
+  !*** ./006_pipes_1/src/main.ts ***!
   \*********************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -51,7 +51,7 @@
 	// Браузерная платформа
 	var platform_browser_dynamic_1 = __webpack_require__(/*! @angular/platform-browser-dynamic */ 1);
 	// Модуль приложения
-	var app_module_1 = __webpack_require__(/*! ./app.module */ 33);
+	var app_module_1 = __webpack_require__(/*! ./app.module */ 37);
 	// Компилляция и запуск модуля 
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
@@ -34500,9 +34500,13 @@
 /* 30 */,
 /* 31 */,
 /* 32 */,
-/* 33 */
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */
 /*!***************************************!*\
-  !*** ./004_ngStyle/src/app.module.ts ***!
+  !*** ./006_pipes_1/src/app.module.ts ***!
   \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -34518,7 +34522,7 @@
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
-	var app_component_1 = __webpack_require__(/*! ./app.component */ 34);
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 38);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -34536,9 +34540,9 @@
 
 
 /***/ },
-/* 34 */
+/* 38 */
 /*!******************************************!*\
-  !*** ./004_ngStyle/src/app.component.ts ***!
+  !*** ./006_pipes_1/src/app.component.ts ***!
   \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -34553,17 +34557,27 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	// Фильтры используются в для форматирования данных
+	// В данном примере рассмотрены такие типы фильтров: 
+	//
+	// UpperCasePipe, LowerCasePipe, CurrencyPipe, and PercentPipe
+	//
 	var AppComponent = (function () {
 	    function AppComponent() {
+	        this.items = [{ name: 'Item 1', category: 'Category 1', price: 10, expires: Date.now(), value: 30 },
+	            { name: 'Item 2', category: 'Category 2', price: 20, expires: 6, value: 40 },
+	            { name: 'Item 3', category: 'Category 3', price: 15, expires: 9, value: 33 },
+	            { name: 'Item 4', category: 'Category 1', price: 10, expires: 3, value: 89 },
+	            { name: 'Item 5', category: 'Category 2', price: 20, expires: 2, value: 45 },
+	            { name: 'Item 6', category: 'Category 3', price: 15, expires: 7, value: 34 },
+	            { name: 'Item 7', category: 'Category 1', price: 20, expires: 3, value: 56 },
+	            { name: 'Item 8', category: 'Category 3', price: 10, expires: 2, value: 23 },
+	            { name: 'Item 9', category: 'Category 2', price: 10, expires: 8, value: 47 }];
 	    }
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
-	            // Директива ngStyle позволяет задавать стили элементам
-	            // Синтаксис: 
-	            // <some - element[ngStyle]="{'font-style': styleExp}" >...</some-element> 
-	            // <some-element [ngStyle]="objExp">...</some-element> 
-	            template: " \n        <div class=\"panel well\">\n           <div [ngStyle]=\"{'width': '100px', 'height': '100px', 'background-color': 'red', 'border-radius': '20px'}\"></div>\n        </div>\n        <div class=\"panel well\">\n           <div [style.background] = \"blue\" [style.width.px] = \"100\" [style.height.px] = \"100\" [style.borderRadius] = \"20\"></div>\n        </div>\n    "
+	            template: "\n        <div class=\"panel well\">\n            <h1>Items!</h1>\n        </div> \n        <div class=\"panel\">\n            <table>\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Category</th>\n                        <th>Price</th>\n                        <th>Expires</th>\n                        <th>Value</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor = \"let item of items\">\n                        <td>{{item.name}}</td>\n                        <td>{{item.category}}</td> \n                        <td>{{item.price}}</td>\n                        <td>{{item.expires | date}}</td> \n                        <td>{{item.value}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppComponent);
