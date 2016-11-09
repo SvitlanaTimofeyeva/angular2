@@ -1,6 +1,6 @@
 module.exports = {
     entry: {
-		
+		'001_events_1/build/bundle': './001_events_1/src/main.ts'
    }, 
    output: {
         filename: '[name].js'
