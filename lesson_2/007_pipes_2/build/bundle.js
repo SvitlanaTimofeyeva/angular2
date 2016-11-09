@@ -34559,16 +34559,42 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	// Фильтры используются в для форматирования данных
+	// В данном примере рассмотрены фильтры для отображения даты и валюты
+	// Фильтр даты: синтаксис --> date_expression | date[:format]
+	// Доступные форматы отображения даты: 
+	//'medium': 'yMMMdjms' (e.g.Sep 3, 2010, 12:05:08 PM for en- US)
+	//'short':  'yMdjm' (e.g. 9/ 3 / 2010, 12:05 PM for en- US)
+	//'fullDate':  'yMMMMEEEEd' (e.g.Friday, September 3, 2010 for en- US)
+	//'longDate':  'yMMMMd' (e.g.September 3, 2010 for en- US)
+	//'mediumDate': 'yMMMd' (e.g.Sep 3, 2010 for en- US)
+	//'shortDate':  'yMd' (e.g. 9/ 3 / 2010 for en- US)
+	//'mediumTime': 'jms' (e.g. 12:05:08 PM for en- US)
+	//'shortTime':  'jm' (e.g. 12:05 PM for en- US)
+	// Фильтр валюты: синтаксис --> number_expression | currency[:currencyCode[:symbolDisplay[:digitInfo]]]
+	// number_expression - число 
+	// currencyCode - валютный код ISO_4217 (https://en.wikipedia.org/wiki/ISO_4217#X_currencies). например, USD, EUR и т.д. 
+	//      digitInfo - строка в следующем формате: 
+	//      { minIntegerDigits }.{ minFractionDigits } -{ maxFractionDigits } 
+	//      minIntegerDigits - минимальное количество отображаемых цифр до запятой. Значение по умолчанию - 1.
+	//      minFractionDigits - минимальное количество отображаемых цифр после запятой . Значение по умолчанию - 0.
+	//      maxFractionDigits - максимальное количество отображаемых цифр после точки. Значение по умолчанию - 3.
 	var AppComponent = (function () {
 	    function AppComponent() {
-	        this.items = [{ name: "Item 1", price: 10.9, category: "Category 1", count: 10000, tax: 1.12, expiration: 10 },
-	            { name: "Item 2", price: 1.1, category: "Category 1", count: 8, tax: 0.55, expiration: 12 },
-	            { name: "Item 3", price: 2.6, category: "Category 2", count: 7, tax: 0.22, expiration: 5 },
-	            { name: "Item 4", price: 17.5, category: "Category 2", count: 33, tax: 2.77, expiration: 10 }];
+	        this.items = [{ name: 'Item 1', category: 'Category 1', price: 10.7, expires: new Date(5678960), value: 30 },
+	            { name: 'Item 2', category: 'Category 2', price: 20.5467, expires: new Date(56785465), value: 40 },
+	            { name: 'Item 3', category: 'Category 3', price: 15.5637, expires: new Date(32456675756), value: 33 },
+	            { name: 'Item 4', category: 'Category 1', price: 104.456, expires: new Date(3425654654266), value: 89 },
+	            { name: 'Item 5', category: 'Category 2', price: 20.536676, expires: new Date(456555590), value: 45 },
+	            { name: 'Item 6', category: 'Category 3', price: 15.5, expires: new Date(456567890), value: 34 },
+	            { name: 'Item 7', category: 'Category 1', price: 209.5, expires: new Date(5463547890), value: 56 },
+	            { name: 'Item 8', category: 'Category 3', price: 10.657, expires: new Date(564567890), value: 23 },
+	            { name: 'Item 9', category: 'Category 2', price: 10.56, expires: new Date(345347890), value: 47 }];
 	    }
 	    AppComponent = __decorate([
 	        core_1.Component({
-	            template: "\n        <div class=\"panel well\">\n            <h1>{{title}}</h1> \n            <table>\n                <thead>\n                    <tr>\n                       <th>Name</th>\n                       <th>Price</th>\n                       <th>Category</th>\n                       <th>Count</th>\n                       <th>Tax</th>\n                       <th>Expiration</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor = \"item of items\">\n                        <td>{{item.name}}</td>\n                        <td>{{item.price}}</td>\n                        <td>{{item.category}}</td>\n                        <td>{{item.count}}</td>\n                        <td>{{item.tax}}</td>\n                        <td>{{item.expiration}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    "
+	            selector: 'my-app',
+	            template: "\n        <div class=\"panel well\">\n            <h1>Items!</h1>\n        </div> \n        <div class=\"panel\">\n            <table class=\"table table-striped\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Category</th>\n                        <th>Price</th>\n                        <th>Expires</th>\n                        <th>Value</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor = \"let item of items\">\n                        <td>{{item.name}}</td>\n                        <td>{{item.category}}</td> \n                        <td>{{item.price | currency:'USD':true:'3.2-2'}}</td>\n                        <td>{{item.expires | date}}</td> \n                        <td>{{item.value}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppComponent);

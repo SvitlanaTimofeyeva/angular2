@@ -8,7 +8,9 @@ module.exports = {
         '006_pipes_1/build/bundle': './006_pipes_1/src/main.ts',
         '007_pipes_2/build/bundle': './007_pipes_2/src/main.ts',
         '008_pipes_3/build/bundle': './008_pipes_3/src/main.ts',
-        '009_pipes_4/build/bundle': '009_pipes_4/src/main.ts'
+        '009_pipes_4/build/bundle': './009_pipes_4/src/main.ts',
+        '010_pipes_5/build/bundle': './010_pipes_5/src/main.ts',
+        '011_pipes_custom/build/bundle': './011_pipes_custom/src/main.ts'
    }, 
    output: {
         filename: '[name].js'

@@ -34558,26 +34558,34 @@
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	// Фильтры используются в для форматирования данных
-	// В данном примере рассмотрены такие типы фильтров: 
-	//
-	// UpperCasePipe, LowerCasePipe, CurrencyPipe, and PercentPipe
-	//
+	// В данном примере рассмотрены фильтры: 
+	// uppercase - фильтр для отображения текста в верхнем регистре 
+	// lowercase - фильтр для отображения текста в нижнем регистре 
+	// number - фильтр для форматирования чисел. Синтаксис: number_expression | number[:digitInfo]
+	//      digitInfo - строка в следующем формате: 
+	//      { minIntegerDigits }.{ minFractionDigits } -{ maxFractionDigits }
+	//      minIntegerDigits - минимальное количество отображаемых цифр до запятой. Значение по умолчанию - 1.
+	//      minFractionDigits - минимальное количество отображаемых цифр после запятой . Значение по умолчанию - 0.
+	//      maxFractionDigits - максимальное количество отображаемых цифр после точки. Значение по умолчанию - 3.
+	// percent - фильтр для отображения процентов 
+	//      синтаксис: number_expression | percent[:digitInfo] 
+	//      digitInfo - строка в описанном выше формате 
 	var AppComponent = (function () {
 	    function AppComponent() {
-	        this.items = [{ name: 'Item 1', category: 'Category 1', price: 10, expires: Date.now(), value: 30 },
-	            { name: 'Item 2', category: 'Category 2', price: 20, expires: 6, value: 40 },
-	            { name: 'Item 3', category: 'Category 3', price: 15, expires: 9, value: 33 },
-	            { name: 'Item 4', category: 'Category 1', price: 10, expires: 3, value: 89 },
-	            { name: 'Item 5', category: 'Category 2', price: 20, expires: 2, value: 45 },
-	            { name: 'Item 6', category: 'Category 3', price: 15, expires: 7, value: 34 },
-	            { name: 'Item 7', category: 'Category 1', price: 20, expires: 3, value: 56 },
-	            { name: 'Item 8', category: 'Category 3', price: 10, expires: 2, value: 23 },
-	            { name: 'Item 9', category: 'Category 2', price: 10, expires: 8, value: 47 }];
+	        this.items = [{ name: 'Item 1', category: 'Category 1', value: 30.546, price: 40.346654 },
+	            { name: 'Item 2', category: 'Category 2', value: 40.34, price: 789.345 },
+	            { name: 'Item 3', category: 'Category 3', value: 33.5, price: 3345.44 },
+	            { name: 'Item 4', category: 'Category 1', value: 89, price: 2000 },
+	            { name: 'Item 5', category: 'Category 2', value: 45, price: 45.334 },
+	            { name: 'Item 6', category: 'Category 3', value: 34.5, price: 340.3 },
+	            { name: 'Item 7', category: 'Category 1', value: 56, price: 34.545 },
+	            { name: 'Item 8', category: 'Category 3', value: 23.346, price: 322.4 },
+	            { name: 'Item 9', category: 'Category 2', value: 47.9, price: 78.45 }];
 	    }
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
-	            template: "\n        <div class=\"panel well\">\n            <h1>Items!</h1>\n        </div> \n        <div class=\"panel\">\n            <table>\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Category</th>\n                        <th>Price</th>\n                        <th>Expires</th>\n                        <th>Value</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor = \"let item of items\">\n                        <td>{{item.name}}</td>\n                        <td>{{item.category}}</td> \n                        <td>{{item.price}}</td>\n                        <td>{{item.expires | date}}</td> \n                        <td>{{item.value}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    "
+	            template: "\n        <div class=\"panel well\">\n            <h1>Items!</h1>\n        </div> \n        <div class=\"panel\">\n            <table class=\"table table-striped\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Category</th>\n                        <th>Value</th> \n                        <th>Price</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor = \"let item of items\">\n                        <td>{{item.name | uppercase }}</td>\n                        <td>{{item.category | lowercase }}</td> \n                        <td>{{item.value | percent:'1.0-1'}}</td>\n                        <td>{{item.price | number: '3.2-3'}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppComponent);

@@ -34526,7 +34526,7 @@
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
-	var app_component_1 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./app.component\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 42);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -34541,6 +34541,50 @@
 	    return AppModule;
 	}());
 	exports.AppModule = AppModule;
+
+
+/***/ },
+/* 42 */
+/*!******************************************!*\
+  !*** ./008_pipes_3/src/app.component.ts ***!
+  \******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	// Фильтры используются в для форматирования данных
+	// В данном примере рассмотрены фильтр для отображения данных в формате json
+	var AppComponent = (function () {
+	    function AppComponent() {
+	        this.items = [{ name: 'Item 1', category: 'Category 1', price: 10.7, expires: new Date(5678960), value: 30 },
+	            { name: 'Item 2', category: 'Category 2', price: 20.5467, expires: new Date(56785465), value: 40 },
+	            { name: 'Item 3', category: 'Category 3', price: 15.5637, expires: new Date(32456675756), value: 33 },
+	            { name: 'Item 4', category: 'Category 1', price: 104.456, expires: new Date(3425654654266), value: 89 },
+	            { name: 'Item 5', category: 'Category 2', price: 20.536676, expires: new Date(456555590), value: 45 },
+	            { name: 'Item 6', category: 'Category 3', price: 15.5, expires: new Date(456567890), value: 34 },
+	            { name: 'Item 7', category: 'Category 1', price: 209.5, expires: new Date(5463547890), value: 56 },
+	            { name: 'Item 8', category: 'Category 3', price: 10.657, expires: new Date(564567890), value: 23 },
+	            { name: 'Item 9', category: 'Category 2', price: 10.56, expires: new Date(345347890), value: 47 }];
+	    }
+	    AppComponent = __decorate([
+	        core_1.Component({
+	            selector: 'my-app',
+	            template: "\n        <div class=\"panel well\">\n            <h1>Items!</h1>\n        </div> \n        <div class=\"panel\">\n            <table class=\"table table-striped\">\n                <thead>\n                    <tr>\n                        <th>Json pipe demo</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor = \"let item of items\">\n                        <td>{{item | json}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], AppComponent);
+	    return AppComponent;
+	}());
+	exports.AppComponent = AppComponent;
 
 
 /***/ }
