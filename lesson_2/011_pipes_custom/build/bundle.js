@@ -39234,13 +39234,14 @@
 	var forms_1 = __webpack_require__(/*! @angular/forms */ 28);
 	var app_component_1 = __webpack_require__(/*! ./app.component */ 48);
 	var pow_filter_pipe_ts_1 = __webpack_require__(/*! ./pow-filter.pipe.ts */ 49);
+	var search_pipe_ts_1 = __webpack_require__(/*! ./search.pipe.ts */ 50);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
 	    AppModule = __decorate([
 	        core_1.NgModule({
 	            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-	            declarations: [app_component_1.AppComponent, pow_filter_pipe_ts_1.PowFilter],
+	            declarations: [app_component_1.AppComponent, pow_filter_pipe_ts_1.PowFilter, search_pipe_ts_1.SearchPipe],
 	            bootstrap: [app_component_1.AppComponent]
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -39271,20 +39272,24 @@
 	// В даннлом примере рассмотрены пользовательские фильтры angular2 (custom pipes)
 	var AppComponent = (function () {
 	    function AppComponent() {
-	        this.items = [{ value: 30 },
-	            { value: 40 },
-	            { value: 33 },
-	            { value: 89 },
-	            { value: 45 },
-	            { value: 34 },
-	            { value: 56 },
-	            { value: 23 },
-	            { value: 47 }];
+	        this.search_val = 'Category 1';
+	        this.items = [{ value: 30, name: 'Category 1' },
+	            { value: 40, name: 'Category 1' },
+	            { value: 33, name: 'Category 2' },
+	            { value: 89, name: 'Category 2' },
+	            { value: 45, name: 'Category 3' },
+	            { value: 34, name: 'Category 3' },
+	            { value: 56, name: 'Category 1' },
+	            { value: 23, name: 'Category 2' },
+	            { value: 47, name: 'Category 3' }];
 	    }
+	    AppComponent.prototype.set_filter_value = function () {
+	        console.log(this.search_val);
+	    };
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
-	            template: "\n        <div class=\"panel well\">\n            <h1>Items!</h1>     \n        </div> \n        <div class=\"panel\">\n            <table class=\"table table-striped\">\n                <thead>\n                    <tr>\n                        <th>Value</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor = \"let item of items\" >\n                        <td>{{item.value | powFilter: 5}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    "
+	            template: "\n        <div class=\"panel well\">\n            <h1>Items!</h1> \n            <input type=\"text\" [(ngModel)] = \"search_val\" class=\"input-lg form-control\" />    \n        </div> \n        <div class=\"panel\">\n            <table class=\"table table-striped\">\n                <thead>\n                    <tr>\n                        <th>Value</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor = \"let item of items | searchPipe : search_val\" >\n                        <td>{{item.name}}</td>\n                        <td>{{item.value | powFilter: 5}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppComponent);
@@ -39327,6 +39332,50 @@
 	    return PowFilter;
 	}());
 	exports.PowFilter = PowFilter;
+
+
+/***/ },
+/* 50 */
+/*!*********************************************!*\
+  !*** ./011_pipes_custom/src/search.pipe.ts ***!
+  \*********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	// импорт модулей, необходимых для создания пользовательских фильтров 
+	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	var SearchPipe = (function () {
+	    function SearchPipe() {
+	    }
+	    SearchPipe.prototype.transform = function (items, search_value) {
+	        if (Object.prototype.toString.call(items) === '[object Array]') {
+	            var filtered = items.filter(function (item) {
+	                if (item.name == search_value)
+	                    return item;
+	            });
+	            console.log('__________ items ___________');
+	            console.log(items);
+	            console.log('__________ filtered ___________');
+	            console.log(filtered);
+	            return filtered;
+	        }
+	    };
+	    SearchPipe = __decorate([
+	        core_1.Pipe({ name: 'searchPipe' }), 
+	        __metadata('design:paramtypes', [])
+	    ], SearchPipe);
+	    return SearchPipe;
+	}());
+	exports.SearchPipe = SearchPipe;
 
 
 /***/ }

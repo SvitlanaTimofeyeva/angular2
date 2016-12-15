@@ -42,14 +42,17 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/*!********************************************************!*\
-  !*** ./012_nested_components_data_binding/src/main.ts ***!
-  \********************************************************/
+/*!*************************************!*\
+  !*** ./007_drag_n_drop/src/main.ts ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var platform_browser_dynamic_1 = __webpack_require__(/*! ../../~/@angular/platform-browser-dynamic */ 1);
-	var app_module_1 = __webpack_require__(/*! ./app.module */ 51);
+	// Браузерная платформа
+	var platform_browser_dynamic_1 = __webpack_require__(/*! @angular/platform-browser-dynamic */ 1);
+	// Модуль приложения
+	var app_module_1 = __webpack_require__(/*! ./app.module */ 35);
+	// Компилляция и запуск модуля 
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
@@ -34499,26 +34502,10 @@
 /* 32 */,
 /* 33 */,
 /* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */
-/*!**************************************************************!*\
-  !*** ./012_nested_components_data_binding/src/app.module.ts ***!
-  \**************************************************************/
+/* 35 */
+/*!*******************************************!*\
+  !*** ./007_drag_n_drop/src/app.module.ts ***!
+  \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34533,18 +34520,15 @@
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
-	var app_parentcomponent_1 = __webpack_require__(/*! ./app.parentcomponent */ 52);
-	var app_childcomponent_1 = __webpack_require__(/*! ./app.childcomponent */ 53);
-	// каждое корневое приложение angular2 использует корневой модуль (root module) 
-	// декоратор @NgModule определяет метаданные, которые будет использовать модуль
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 36);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
 	    AppModule = __decorate([
 	        core_1.NgModule({
 	            imports: [platform_browser_1.BrowserModule],
-	            declarations: [app_parentcomponent_1.ParentComponent, app_childcomponent_1.ChildComponent],
-	            bootstrap: [app_parentcomponent_1.ParentComponent, app_childcomponent_1.ChildComponent]
+	            declarations: [app_component_1.AppComponent],
+	            bootstrap: [app_component_1.AppComponent]
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppModule);
@@ -34554,10 +34538,10 @@
 
 
 /***/ },
-/* 52 */
-/*!***********************************************************************!*\
-  !*** ./012_nested_components_data_binding/src/app.parentcomponent.ts ***!
-  \***********************************************************************/
+/* 36 */
+/*!**********************************************!*\
+  !*** ./007_drag_n_drop/src/app.component.ts ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34571,58 +34555,44 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var ParentComponent = (function () {
-	    function ParentComponent() {
+	// Для работы с drag and drop в JS прдусмотрены следующие события:
+	//  drag -  перетаскивании элемента или выбранного текса с помощью мыши
+	//  dragend -  пользователь отпускает курсор мыши
+	//  dragenter - перетаскиваемый элемент достигает конечного элемента 
+	//  dragleave -  перетаскиваемый элемент выходит за пределы конечного элемента 
+	//  dragover -  курсор мыши наведен на элемент при перетаскивании 
+	//  dragstart - начало переноса элемента или выбранного текста с помощью мыши
+	//  drop -  происходит drop элемента 
+	var AppComponent = (function () {
+	    function AppComponent() {
 	    }
-	    ParentComponent = __decorate([
+	    AppComponent.prototype.dragstart_handler = function ($event) {
+	        if (!$event.target.classList.contains('brick'))
+	            return false;
+	        $event.target.style.backgroundColor = 'blue';
+	        $event.dataTransfer.effectAllowed = 'move';
+	        $event.dataTransfer.setData('text/plain', $event.target.id);
+	        console.log($event.target);
+	    };
+	    AppComponent.prototype.dragover_handler = function ($event) {
+	        $event.preventDefault();
+	    };
+	    AppComponent.prototype.drop_handler = function ($event) {
+	        var data = $event.dataTransfer.getData("text/plain");
+	        $event.target.appendChild(document.getElementById(data));
+	        console.log('drop!');
+	    };
+	    AppComponent = __decorate([
 	        core_1.Component({
-	            selector: 'parent',
-	            // синтаксис  [attr] = "value" используется для односторонней привязки данных в качестве атрибута компонента  
-	            // таким образом осуществляется коммуникация родительских и дочерних компонентов 
-	            template: "<div class=\"panel well\">\n        <child [text] = \"1\"></child>\n    </div>"
+	            selector: 'my-app',
+	            template: "\n        <div class=\"panel well\" (dragstart) = \"dragstart_handler($event)\" >\n            <div class=\"brick\" id=\"brick0\" draggable=\"true\"></div> \n            <div class=\"brick\" id=\"brick1\" draggable=\"true\"></div>\n            <div class=\"brick\" id=\"brick2\" draggable=\"true\"></div>\n            <div class=\"brick\" id=\"brick3\" draggable=\"true\"></div>\n            <div class=\"brick\" id=\"brick4\" draggable=\"true\"></div>\n            <div class=\"brick\" id=\"brick5\" draggable=\"true\"></div>\n            <div class=\"brick\" id=\"brick6\" draggable=\"true\"></div>\n            <div class=\"brick\" id=\"brick7\" draggable=\"true\"></div>\n            <div class=\"brick\" id=\"brick8\" draggable=\"true\"></div>\n            <div class=\"brick\" id=\"brick9\" draggable=\"true\"></div> \n        </div>\n        <div class=\"panel dropzone\" (dragover) = \"dragover_handler($event)\" (drop) = \"drop_handler($event)\">\n            <h1>Drag bricks here</h1>\n        </div>\n    ",
+	            styles: ["\n        .brick {\n            width: 70px;\n            height: 40px;\n            background-color: blue;\n            border-radius: 20px;\n            margin-top: 10px; \n            cursor: pointer;\n        } \n        .dropzone {\n            height: 400px; \n        }\n    "]
 	        }), 
 	        __metadata('design:paramtypes', [])
-	    ], ParentComponent);
-	    return ParentComponent;
+	    ], AppComponent);
+	    return AppComponent;
 	}());
-	exports.ParentComponent = ParentComponent;
-
-
-/***/ },
-/* 53 */
-/*!**********************************************************************!*\
-  !*** ./012_nested_components_data_binding/src/app.childcomponent.ts ***!
-  \**********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var ChildComponent = (function () {
-	    function ChildComponent() {
-	    }
-	    __decorate([
-	        core_1.Input(), 
-	        __metadata('design:type', String)
-	    ], ChildComponent.prototype, "text", void 0);
-	    ChildComponent = __decorate([
-	        core_1.Component({
-	            selector: 'child',
-	            template: "<h2> {{text}} </h2>"
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], ChildComponent);
-	    return ChildComponent;
-	}());
-	exports.ChildComponent = ChildComponent;
+	exports.AppComponent = AppComponent;
 
 
 /***/ }

@@ -10,7 +10,9 @@ module.exports = {
         '008_pipes_3/build/bundle': './008_pipes_3/src/main.ts',
         '009_pipes_4/build/bundle': './009_pipes_4/src/main.ts',
         '010_pipes_5/build/bundle': './010_pipes_5/src/main.ts',
-        '011_pipes_custom/build/bundle': './011_pipes_custom/src/main.ts'
+        '011_pipes_custom/build/bundle': './011_pipes_custom/src/main.ts',
+        '012_nested_components_data_binding/build/bundle': './012_nested_components_data_binding/src/main.ts'
+   
    }, 
    output: {
         filename: '[name].js'

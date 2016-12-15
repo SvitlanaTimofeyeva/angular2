@@ -42,14 +42,17 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/*!********************************************************!*\
-  !*** ./012_nested_components_data_binding/src/main.ts ***!
-  \********************************************************/
+/*!****************************************!*\
+  !*** ./003_mouse_events_1/src/main.ts ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var platform_browser_dynamic_1 = __webpack_require__(/*! ../../~/@angular/platform-browser-dynamic */ 1);
-	var app_module_1 = __webpack_require__(/*! ./app.module */ 51);
+	// Браузерная платформа
+	var platform_browser_dynamic_1 = __webpack_require__(/*! @angular/platform-browser-dynamic */ 1);
+	// Модуль приложения
+	var app_module_1 = __webpack_require__(/*! ./app.module */ 27);
+	// Компилляция и запуск модуля 
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
@@ -34491,34 +34494,10 @@
 /* 24 */,
 /* 25 */,
 /* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */
-/*!**************************************************************!*\
-  !*** ./012_nested_components_data_binding/src/app.module.ts ***!
-  \**************************************************************/
+/* 27 */
+/*!**********************************************!*\
+  !*** ./003_mouse_events_1/src/app.module.ts ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34533,18 +34512,15 @@
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
-	var app_parentcomponent_1 = __webpack_require__(/*! ./app.parentcomponent */ 52);
-	var app_childcomponent_1 = __webpack_require__(/*! ./app.childcomponent */ 53);
-	// каждое корневое приложение angular2 использует корневой модуль (root module) 
-	// декоратор @NgModule определяет метаданные, которые будет использовать модуль
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 28);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
 	    AppModule = __decorate([
 	        core_1.NgModule({
 	            imports: [platform_browser_1.BrowserModule],
-	            declarations: [app_parentcomponent_1.ParentComponent, app_childcomponent_1.ChildComponent],
-	            bootstrap: [app_parentcomponent_1.ParentComponent, app_childcomponent_1.ChildComponent]
+	            declarations: [app_component_1.AppComponent],
+	            bootstrap: [app_component_1.AppComponent]
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppModule);
@@ -34554,10 +34530,10 @@
 
 
 /***/ },
-/* 52 */
-/*!***********************************************************************!*\
-  !*** ./012_nested_components_data_binding/src/app.parentcomponent.ts ***!
-  \***********************************************************************/
+/* 28 */
+/*!*************************************************!*\
+  !*** ./003_mouse_events_1/src/app.component.ts ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34571,58 +34547,27 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var ParentComponent = (function () {
-	    function ParentComponent() {
+	var AppComponent = (function () {
+	    function AppComponent() {
+	        this.title = 'Click';
+	        this.counter = 0;
 	    }
-	    ParentComponent = __decorate([
+	    AppComponent.prototype.add = function ($event) {
+	        this.counter++;
+	    };
+	    AppComponent.prototype.subtract = function ($event) {
+	        this.counter--;
+	    };
+	    AppComponent = __decorate([
 	        core_1.Component({
-	            selector: 'parent',
-	            // синтаксис  [attr] = "value" используется для односторонней привязки данных в качестве атрибута компонента  
-	            // таким образом осуществляется коммуникация родительских и дочерних компонентов 
-	            template: "<div class=\"panel well\">\n        <child [text] = \"1\"></child>\n    </div>"
+	            selector: 'my-app',
+	            template: "\n        <div class=\"panel well\">\n            <button class=\"btn btn-lg btn-danger\" (click) = \"add($event)\" >{{title}}</button>  \n            <button class=\"btn btn-lg btn-danger\" (click) = \"subtract($event)\" >{{title}}</button> \n            <h1>{{counter}}</h1>\n        </div>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
-	    ], ParentComponent);
-	    return ParentComponent;
+	    ], AppComponent);
+	    return AppComponent;
 	}());
-	exports.ParentComponent = ParentComponent;
-
-
-/***/ },
-/* 53 */
-/*!**********************************************************************!*\
-  !*** ./012_nested_components_data_binding/src/app.childcomponent.ts ***!
-  \**********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var ChildComponent = (function () {
-	    function ChildComponent() {
-	    }
-	    __decorate([
-	        core_1.Input(), 
-	        __metadata('design:type', String)
-	    ], ChildComponent.prototype, "text", void 0);
-	    ChildComponent = __decorate([
-	        core_1.Component({
-	            selector: 'child',
-	            template: "<h2> {{text}} </h2>"
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], ChildComponent);
-	    return ChildComponent;
-	}());
-	exports.ChildComponent = ChildComponent;
+	exports.AppComponent = AppComponent;
 
 
 /***/ }

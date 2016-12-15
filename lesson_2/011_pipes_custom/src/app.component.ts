@@ -9,7 +9,8 @@
     selector: 'my-app',
     template: `
         <div class="panel well">
-            <h1>Items!</h1>     
+            <h1>Items!</h1> 
+            <input type="text" [(ngModel)] = "search_val" class="input-lg form-control" />    
         </div> 
         <div class="panel">
             <table class="table table-striped">
@@ -19,7 +20,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor = "let item of items" >
+                    <tr *ngFor = "let item of items | searchPipe : search_val" >
+                        <td>{{item.name}}</td>
                         <td>{{item.value | powFilter: 5}}</td>
                     </tr>
                 </tbody>
@@ -30,14 +32,20 @@
 
 export class AppComponent { 
 
-    items = [{ value: 30 },
-        { value: 40 },
-        { value: 33 },
-        { value: 89 },
-        { value: 45 },
-        { value: 34 },
-        { value: 56 },
-        { value: 23 },
-        { value: 47 }]; 
+    search_val = 'Category 1'; 
+    items = [{ value: 30, name: 'Category 1' },
+        { value: 40, name: 'Category 1' },
+        { value: 33, name: 'Category 2' },
+        { value: 89, name: 'Category 2' },
+        { value: 45, name: 'Category 3' },
+        { value: 34, name: 'Category 3' },
+        { value: 56, name: 'Category 1' },
+        { value: 23, name: 'Category 2' },
+        { value: 47, name: 'Category 3' }]; 
+
+
+    set_filter_value() {
+        console.log(this.search_val)
+    }
 
 }
