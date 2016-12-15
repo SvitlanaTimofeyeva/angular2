@@ -39261,13 +39261,25 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	// в данном примере рассмотрены события focus и blur
 	var AppComponent = (function () {
 	    function AppComponent() {
 	    }
+	    AppComponent.prototype.focus_handler = function ($event) {
+	        $event.target.style.backgroundColor = '#d7ffd6';
+	        console.log('___focus on field___');
+	        console.log($event.target);
+	    };
+	    AppComponent.prototype.blur_handler = function ($event) {
+	        $event.target.style.backgroundColor = '#fff0d6';
+	        console.log('___blur on field___');
+	        console.log($event.target);
+	    };
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'my-app',
-	            template: "\n        <div class=\"panel\">\n            <form>\n                <div class=\"form-group\">\n                    <label>Name</label>\n                    <input type=\"text\" class=\"input-lg form-control\" placeholder=\"Name\" />\n                </div>\n                <div class=\"form-group\">\n                    <label>Email</label>\n                    <input type=\"email\" class=\"input-lg form-control\" placeholder=\"Email\" />\n                </div>\n                <div class=\"form-group\">\n                    <label>Message</label>\n                    <textarea class=\"input-lg form-control\"></textarea>\n                </div>\n                <div class=\"form-group\">\n                    <input type=\"submit\" value=\"Send form!\"/>\n                </div>\n\n            </form>\n        </div>\n    "
+	            template: "\n        <div class=\"panel\">\n            <form class=\"form\">\n                <div class=\"form-group\">\n                    <label>Name</label>\n                    <input type=\"text\" class=\"input-lg form-control\" placeholder=\"Name\" (focus) = \"focus_handler($event)\" (blur) = \"blur_handler($event)\"/>\n                </div>\n                <div class=\"form-group\">\n                    <label>Email</label>\n                    <input type=\"email\" class=\"input-lg form-control\" placeholder=\"Email\" (focus) = \"focus_handler($event)\" (blur) = \"blur_handler($event)\"/>\n                </div>\n                <div class=\"form-group\">\n                    <label>Message</label>\n                    <textarea class=\"input-lg form-control\" placeholder=\"Message\" (focus) = \"focus_handler($event)\" (blur) = \"blur_handler($event)\"></textarea>\n                </div>\n                <div class=\"form-group\">\n                    <input type=\"submit\" value=\"Send form!\" class=\"btn-lg btn-success\"/>\n                </div>\n\n            </form>\n        </div>\n    ",
+	            styles: ["\n        .form {\n            width: 600px;\n            margin: 0 auto;\n        }\n    "]
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppComponent);

@@ -51,7 +51,7 @@
 	// Браузерная платформа
 	var platform_browser_dynamic_1 = __webpack_require__(/*! @angular/platform-browser-dynamic */ 1);
 	// Модуль приложения
-	var app_module_1 = __webpack_require__(/*! ./app.module */ 27);
+	var app_module_1 = __webpack_require__(/*! ./app.module */ 31);
 	// Компилляция и запуск модуля 
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
@@ -34493,45 +34493,7 @@
 /* 23 */,
 /* 24 */,
 /* 25 */,
-/* 26 */,
-/* 27 */
-/*!****************************************!*\
-  !*** ./003_ngSwitch/src/app.module.ts ***!
-  \****************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
-	var forms_1 = __webpack_require__(/*! @angular/forms */ 28);
-	var app_component_1 = __webpack_require__(/*! ./app.component */ 32);
-	var AppModule = (function () {
-	    function AppModule() {
-	    }
-	    AppModule = __decorate([
-	        core_1.NgModule({
-	            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-	            declarations: [app_component_1.AppComponent],
-	            bootstrap: [app_component_1.AppComponent]
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], AppModule);
-	    return AppModule;
-	}());
-	exports.AppModule = AppModule;
-
-
-/***/ },
-/* 28 */
+/* 26 */
 /*!***********************************************!*\
   !*** ./~/@angular/forms/bundles/forms.umd.js ***!
   \***********************************************/
@@ -34543,7 +34505,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(/*! @angular/core */ 3), __webpack_require__(/*! rxjs/operator/toPromise */ 29), __webpack_require__(/*! rxjs/Subject */ 4), __webpack_require__(/*! rxjs/Observable */ 5), __webpack_require__(/*! rxjs/observable/fromPromise */ 30)) :
+	     true ? factory(exports, __webpack_require__(/*! @angular/core */ 3), __webpack_require__(/*! rxjs/operator/toPromise */ 27), __webpack_require__(/*! rxjs/Subject */ 4), __webpack_require__(/*! rxjs/Observable */ 5), __webpack_require__(/*! rxjs/observable/fromPromise */ 28)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/operator/toPromise', 'rxjs/Subject', 'rxjs/Observable', 'rxjs/observable/fromPromise'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.forms = global.ng.forms || {}),global.ng.core,global.Rx.Observable.prototype,global.Rx,global.Rx,global.Rx.Observable));
 	}(this, function (exports,_angular_core,rxjs_operator_toPromise,rxjs_Subject,rxjs_Observable,rxjs_observable_fromPromise) { 'use strict';
@@ -39057,7 +39019,7 @@
 
 
 /***/ },
-/* 29 */
+/* 27 */
 /*!**************************************!*\
   !*** ./~/rxjs/operator/toPromise.js ***!
   \**************************************/
@@ -39093,19 +39055,19 @@
 	//# sourceMappingURL=toPromise.js.map
 
 /***/ },
-/* 30 */
+/* 28 */
 /*!******************************************!*\
   !*** ./~/rxjs/observable/fromPromise.js ***!
   \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var PromiseObservable_1 = __webpack_require__(/*! ./PromiseObservable */ 31);
+	var PromiseObservable_1 = __webpack_require__(/*! ./PromiseObservable */ 29);
 	exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 	//# sourceMappingURL=fromPromise.js.map
 
 /***/ },
-/* 31 */
+/* 29 */
 /*!************************************************!*\
   !*** ./~/rxjs/observable/PromiseObservable.js ***!
   \************************************************/
@@ -39232,6 +39194,44 @@
 	    }
 	}
 	//# sourceMappingURL=PromiseObservable.js.map
+
+/***/ },
+/* 30 */,
+/* 31 */
+/*!****************************************!*\
+  !*** ./003_ngSwitch/src/app.module.ts ***!
+  \****************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 21);
+	var forms_1 = __webpack_require__(/*! @angular/forms */ 26);
+	var app_component_1 = __webpack_require__(/*! ./app.component */ 32);
+	var AppModule = (function () {
+	    function AppModule() {
+	    }
+	    AppModule = __decorate([
+	        core_1.NgModule({
+	            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+	            declarations: [app_component_1.AppComponent],
+	            bootstrap: [app_component_1.AppComponent]
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], AppModule);
+	    return AppModule;
+	}());
+	exports.AppModule = AppModule;
+
 
 /***/ },
 /* 32 */

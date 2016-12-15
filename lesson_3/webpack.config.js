@@ -7,11 +7,10 @@ module.exports = {
         '005_scroll/build/bundle': './005_scroll/src/main.ts',
         '006_keyboard_events/build/bundle': './006_keyboard_events/src/main.ts',
         '007_drag_n_drop/build/bundle': './007_drag_n_drop/src/main.ts',
-        '008_form_events_1/build/bundle': './008_form_events_1/src/main.ts',
-        '009_form_events_2/build/bundle': './009_form_events_2/src/main.ts',
-        '010_custom_events/build/bundle': './010_custom_events/src/main.ts',
-        '011_validation_1/build/bundle': './011_validation_1/src/main.ts',
-        '012_validation_2/build/bundle': './012_validation_2/src/main.ts'
+        '008_form_events/build/bundle': './008_form_events/src/main.ts',
+        '009_custom_events/build/bundle': './009_custom_events/src/main.ts',
+        '010_validation_1/build/bundle': './010_validation_1/src/main.ts',
+        '011_validation_2/build/bundle': './011_validation_2/src/main.ts'
    }, 
    output: {
         filename: '[name].js'
